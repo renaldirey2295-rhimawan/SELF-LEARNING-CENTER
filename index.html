@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>MY LEARNING CENTER</title>
 
 <style>
+
 /* =====================================================
-   MY LEARNING CENTER — INDEX.HTML V1
+   ROOT
 ===================================================== */
 
 :root{
+
     --primary:#2563eb;
     --primary-dark:#1d4ed8;
     --secondary:#7c3aed;
+
     --success:#16a34a;
     --warning:#f59e0b;
     --danger:#dc2626;
@@ -28,11 +35,15 @@
     --sidebar:#0f172a;
     --sidebar-text:#cbd5e1;
 
-    --shadow:0 10px 30px rgba(15,23,42,.08);
+    --shadow:
+        0 10px 30px rgba(15,23,42,.08);
+
     --radius:18px;
+
 }
 
 body.dark{
+
     --bg:#0b1120;
     --card:#111827;
     --text:#f8fafc;
@@ -42,7 +53,9 @@ body.dark{
     --sidebar:#020617;
     --sidebar-text:#cbd5e1;
 
-    --shadow:0 10px 30px rgba(0,0,0,.25);
+    --shadow:
+        0 10px 30px rgba(0,0,0,.25);
+
 }
 
 
@@ -51,16 +64,23 @@ body.dark{
 ===================================================== */
 
 *{
+
     box-sizing:border-box;
+
     margin:0;
+
     padding:0;
+
 }
 
 html{
+
     scroll-behavior:smooth;
+
 }
 
 body{
+
     font-family:
         Inter,
         Tahoma,
@@ -68,6 +88,7 @@ body{
         sans-serif;
 
     background:var(--bg);
+
     color:var(--text);
 
     min-height:100vh;
@@ -75,22 +96,30 @@ body{
     transition:
         background .25s ease,
         color .25s ease;
+
 }
 
 button,
 input,
 textarea,
 select{
+
     font:inherit;
+
 }
 
 button{
+
     cursor:pointer;
+
 }
 
 a{
+
     color:inherit;
+
     text-decoration:none;
+
 }
 
 
@@ -99,7 +128,9 @@ a{
 ===================================================== */
 
 .loading-screen{
+
     position:fixed;
+
     inset:0;
 
     background:
@@ -110,8 +141,11 @@ a{
         );
 
     display:flex;
+
     flex-direction:column;
+
     align-items:center;
+
     justify-content:center;
 
     z-index:99999;
@@ -119,40 +153,51 @@ a{
     color:white;
 
     transition:
-        opacity .35s ease,
-        visibility .35s ease;
+        opacity .3s ease,
+        visibility .3s ease;
+
 }
 
 .loading-screen.hidden{
+
     opacity:0;
+
     visibility:hidden;
+
 }
 
 .loader-logo{
+
     width:80px;
+
     height:80px;
 
     border-radius:24px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     font-size:36px;
 
-    background:rgba(255,255,255,.15);
+    background:
+        rgba(255,255,255,.15);
 
     margin-bottom:20px;
 
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.25);
 }
 
 .loader-spinner{
+
     width:38px;
+
     height:38px;
 
-    border:4px solid rgba(255,255,255,.25);
+    border:
+        4px solid rgba(255,255,255,.25);
+
     border-top-color:white;
 
     border-radius:50%;
@@ -161,22 +206,30 @@ a{
         spin .8s linear infinite;
 
     margin-bottom:16px;
+
 }
 
 @keyframes spin{
+
     to{
+
         transform:rotate(360deg);
+
     }
+
 }
 
 
 /* =====================================================
-   APP LAYOUT
+   APP
 ===================================================== */
 
 .app{
+
     display:flex;
+
     min-height:100vh;
+
 }
 
 
@@ -185,6 +238,7 @@ a{
 ===================================================== */
 
 .sidebar{
+
     width:280px;
 
     background:var(--sidebar);
@@ -192,13 +246,17 @@ a{
     color:var(--sidebar-text);
 
     position:fixed;
+
     top:0;
+
     bottom:0;
+
     left:0;
 
     z-index:1000;
 
     display:flex;
+
     flex-direction:column;
 
     border-right:
@@ -206,29 +264,40 @@ a{
 
     transition:
         transform .3s ease;
+
 }
 
 .sidebar-header{
+
     padding:24px 20px;
 
     border-bottom:
         1px solid rgba(255,255,255,.08);
+
 }
 
 .brand{
+
     display:flex;
+
     align-items:center;
+
     gap:12px;
+
 }
 
 .brand-icon{
+
     width:46px;
+
     height:46px;
 
     border-radius:14px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     background:
@@ -242,17 +311,20 @@ a{
 
     font-size:23px;
 
-    box-shadow:
-        0 8px 25px rgba(37,99,235,.3);
 }
 
 .brand-text h1{
+
     font-size:17px;
+
     color:white;
+
     font-weight:800;
+
 }
 
 .brand-text span{
+
     display:block;
 
     font-size:11px;
@@ -260,18 +332,23 @@ a{
     color:#94a3b8;
 
     margin-top:3px;
+
 }
 
-
 .sidebar-search{
+
     padding:18px 16px;
+
 }
 
 .sidebar-search-box{
+
     position:relative;
+
 }
 
 .sidebar-search-box input{
+
     width:100%;
 
     background:
@@ -288,24 +365,30 @@ a{
         11px 12px 11px 38px;
 
     outline:none;
+
 }
 
 .sidebar-search-box input::placeholder{
+
     color:#64748b;
+
 }
 
 .sidebar-search-box span{
+
     position:absolute;
+
     left:13px;
+
     top:50%;
 
-    transform:translateY(-50%);
+    transform:
+        translateY(-50%);
 
-    color:#64748b;
 }
 
-
 .sidebar-title{
+
     padding:
         6px 20px 10px;
 
@@ -318,15 +401,19 @@ a{
     text-transform:uppercase;
 
     letter-spacing:1px;
+
 }
 
-
 .category-menu{
+
     overflow-y:auto;
+
     padding:0 12px 20px;
+
 }
 
 .category-button{
+
     width:100%;
 
     border:0;
@@ -340,6 +427,7 @@ a{
     border-radius:10px;
 
     display:flex;
+
     align-items:center;
 
     gap:10px;
@@ -349,23 +437,29 @@ a{
     margin-bottom:3px;
 
     transition:.2s;
+
 }
 
 .category-button:hover{
+
     background:
         rgba(255,255,255,.06);
 
     color:white;
+
 }
 
 .category-button.active{
+
     background:
         rgba(37,99,235,.18);
 
     color:#60a5fa;
+
 }
 
 .category-count{
+
     margin-left:auto;
 
     font-size:11px;
@@ -376,19 +470,22 @@ a{
     padding:2px 7px;
 
     border-radius:20px;
+
 }
 
-
 .sidebar-footer{
+
     margin-top:auto;
 
     padding:15px;
 
     border-top:
         1px solid rgba(255,255,255,.08);
+
 }
 
 .sidebar-footer button{
+
     width:100%;
 
     border:0;
@@ -404,14 +501,15 @@ a{
 
     margin-top:7px;
 
-    transition:.2s;
 }
 
 .sidebar-footer button:hover{
+
     background:
         rgba(255,255,255,.1);
 
     color:white;
+
 }
 
 
@@ -420,7 +518,9 @@ a{
 ===================================================== */
 
 .sidebar-overlay{
+
     position:fixed;
+
     inset:0;
 
     background:
@@ -429,19 +529,25 @@ a{
     z-index:999;
 
     display:none;
+
 }
 
 .sidebar-overlay.show{
+
     display:block;
+
 }
 
 .mobile-menu-button{
+
     display:none;
 
     width:42px;
+
     height:42px;
 
-    border:1px solid var(--border);
+    border:
+        1px solid var(--border);
 
     background:var(--card);
 
@@ -450,9 +556,11 @@ a{
     border-radius:12px;
 
     align-items:center;
+
     justify-content:center;
 
     font-size:20px;
+
 }
 
 
@@ -461,12 +569,14 @@ a{
 ===================================================== */
 
 .main{
+
     margin-left:280px;
 
     width:
         calc(100% - 280px);
 
     min-height:100vh;
+
 }
 
 
@@ -475,9 +585,11 @@ a{
 ===================================================== */
 
 .topbar{
+
     height:76px;
 
     display:flex;
+
     align-items:center;
 
     justify-content:space-between;
@@ -485,43 +597,61 @@ a{
     padding:
         0 30px;
 
-    background:
-        var(--card);
+    background:var(--card);
 
     border-bottom:
         1px solid var(--border);
 
     position:sticky;
+
     top:0;
 
     z-index:100;
+
 }
 
 .topbar-left{
+
     display:flex;
+
     align-items:center;
+
     gap:12px;
+
 }
 
 .page-title{
+
     font-size:18px;
+
     font-weight:800;
+
 }
 
 .page-subtitle{
+
     color:var(--muted);
+
     font-size:12px;
+
     margin-top:2px;
+
 }
 
 .topbar-actions{
+
     display:flex;
+
     align-items:center;
+
     gap:8px;
+
 }
 
 .icon-button{
+
     width:42px;
+
     height:42px;
 
     border:
@@ -534,15 +664,21 @@ a{
     border-radius:12px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
-    transition:.2s;
 }
 
 .icon-button:hover{
-    border-color:var(--primary);
-    color:var(--primary);
+
+    border-color:
+        var(--primary);
+
+    color:
+        var(--primary);
+
 }
 
 
@@ -551,9 +687,13 @@ a{
 ===================================================== */
 
 .content{
+
     padding:30px;
+
     max-width:1500px;
+
     margin:auto;
+
 }
 
 
@@ -562,6 +702,7 @@ a{
 ===================================================== */
 
 .hero{
+
     background:
         linear-gradient(
             135deg,
@@ -584,50 +725,21 @@ a{
         0 20px 45px rgba(37,99,235,.22);
 
     margin-bottom:24px;
-}
 
-.hero::before{
-    content:"";
-
-    position:absolute;
-
-    width:300px;
-    height:300px;
-
-    border-radius:50%;
-
-    background:
-        rgba(255,255,255,.08);
-
-    right:-100px;
-    top:-150px;
-}
-
-.hero::after{
-    content:"";
-
-    position:absolute;
-
-    width:180px;
-    height:180px;
-
-    border-radius:50%;
-
-    background:
-        rgba(255,255,255,.06);
-
-    right:160px;
-    bottom:-110px;
 }
 
 .hero-content{
+
     position:relative;
+
     z-index:2;
 
     max-width:750px;
+
 }
 
 .hero-label{
+
     display:inline-flex;
 
     align-items:center;
@@ -647,27 +759,31 @@ a{
     font-size:11px;
 
     margin-bottom:14px;
+
 }
 
 .hero h2{
+
     font-size:32px;
 
     line-height:1.15;
 
     margin-bottom:12px;
+
 }
 
 .hero p{
+
     color:#dbeafe;
 
     line-height:1.7;
 
     font-size:14px;
 
-    max-width:680px;
 }
 
 .hero-buttons{
+
     display:flex;
 
     flex-wrap:wrap;
@@ -675,9 +791,11 @@ a{
     gap:10px;
 
     margin-top:22px;
+
 }
 
 .hero-button{
+
     border:0;
 
     padding:11px 16px;
@@ -690,18 +808,10 @@ a{
 
     font-weight:700;
 
-    transition:.2s;
-}
-
-.hero-button:hover{
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 8px 20px rgba(0,0,0,.15);
 }
 
 .hero-button.secondary{
+
     background:
         rgba(255,255,255,.12);
 
@@ -709,14 +819,16 @@ a{
 
     border:
         1px solid rgba(255,255,255,.2);
+
 }
 
 
 /* =====================================================
-   STAT CARDS
+   STATS
 ===================================================== */
 
 .stats{
+
     display:grid;
 
     grid-template-columns:
@@ -725,9 +837,11 @@ a{
     gap:15px;
 
     margin-bottom:25px;
+
 }
 
 .stat-card{
+
     background:var(--card);
 
     border:
@@ -746,10 +860,13 @@ a{
     align-items:center;
 
     gap:15px;
+
 }
 
 .stat-icon{
+
     width:48px;
+
     height:48px;
 
     border-radius:14px;
@@ -763,31 +880,36 @@ a{
     font-size:21px;
 
     background:
-        var(--light,
-        #eff6ff);
+        var(--light,#eff6ff);
 
     color:
-        var(--icon,
-        #2563eb);
+        var(--icon,#2563eb);
+
 }
 
 .stat-value{
+
     font-size:23px;
+
     font-weight:800;
+
 }
 
 .stat-label{
+
     font-size:12px;
+
     color:var(--muted);
-    margin-top:2px;
+
 }
 
 
 /* =====================================================
-   SECTION HEADER
+   SECTION
 ===================================================== */
 
 .section-header{
+
     display:flex;
 
     align-items:center;
@@ -797,19 +919,27 @@ a{
     margin-bottom:15px;
 
     gap:15px;
+
 }
 
 .section-header h3{
+
     font-size:19px;
+
 }
 
 .section-header p{
+
     font-size:12px;
+
     color:var(--muted);
+
     margin-top:3px;
+
 }
 
 .add-button{
+
     border:0;
 
     background:
@@ -830,15 +960,13 @@ a{
 
     gap:7px;
 
-    transition:.2s;
 }
 
 .add-button:hover{
+
     background:
         var(--primary-dark);
 
-    transform:
-        translateY(-2px);
 }
 
 
@@ -847,19 +975,25 @@ a{
 ===================================================== */
 
 .search-area{
+
     display:flex;
 
     gap:10px;
 
     margin-bottom:20px;
+
 }
 
 .search-box{
+
     position:relative;
+
     flex:1;
+
 }
 
 .search-box input{
+
     width:100%;
 
     border:
@@ -876,27 +1010,13 @@ a{
 
     outline:none;
 
-    transition:.2s;
 }
 
 .search-box input:focus{
+
     border-color:
         var(--primary);
 
-    box-shadow:
-        0 0 0 3px rgba(37,99,235,.1);
-}
-
-.search-box span{
-    position:absolute;
-
-    left:14px;
-    top:50%;
-
-    transform:
-        translateY(-50%);
-
-    color:var(--muted);
 }
 
 
@@ -905,15 +1025,18 @@ a{
 ===================================================== */
 
 .material-grid{
+
     display:grid;
 
     grid-template-columns:
         repeat(3,1fr);
 
     gap:17px;
+
 }
 
 .material-card{
+
     background:var(--card);
 
     border:
@@ -927,43 +1050,42 @@ a{
     box-shadow:
         var(--shadow);
 
-    cursor:pointer;
-
     position:relative;
 
     overflow:hidden;
 
     transition:
         transform .2s ease,
-        box-shadow .2s ease,
-        border-color .2s ease;
+        box-shadow .2s ease;
+
 }
 
 .material-card:hover{
+
     transform:
         translateY(-5px);
 
     box-shadow:
         0 18px 40px rgba(15,23,42,.12);
 
-    border-color:
-        rgba(37,99,235,.3);
 }
 
 .material-top{
+
     display:flex;
 
     justify-content:space-between;
 
     align-items:flex-start;
 
-    gap:10px;
+    margin-bottom:15px;
 
-    margin-bottom:16px;
 }
 
 .material-icon{
+
     width:44px;
+
     height:44px;
 
     border-radius:13px;
@@ -975,32 +1097,34 @@ a{
     justify-content:center;
 
     background:
-        linear-gradient(
-            135deg,
-            #eff6ff,
-            #dbeafe
-        );
+        #eff6ff;
 
     color:
         var(--primary);
 
     font-size:20px;
+
 }
 
 body.dark .material-icon{
+
     background:
         rgba(37,99,235,.14);
+
 }
 
 .material-id{
+
     font-size:10px;
 
     color:var(--muted);
 
     font-weight:700;
+
 }
 
 .material-category{
+
     display:inline-flex;
 
     padding:
@@ -1019,27 +1143,35 @@ body.dark .material-icon{
         #2563eb;
 
     margin-bottom:9px;
+
 }
 
 body.dark .material-category{
+
     background:
         rgba(37,99,235,.15);
+
 }
 
 .material-card h4{
+
     font-size:17px;
 
     line-height:1.35;
 
     margin-bottom:8px;
+
 }
 
 .material-card p{
+
     color:var(--muted);
 
     font-size:12px;
 
     line-height:1.65;
+
+    min-height:58px;
 
     display:
         -webkit-box;
@@ -1049,14 +1181,24 @@ body.dark .material-category{
     -webkit-box-orient:vertical;
 
     overflow:hidden;
+
 }
 
+
+/* =====================================================
+   FIX UTAMA:
+   ACTION AREA + TOMBOL BUKA
+===================================================== */
+
 .material-footer{
+
     display:flex;
 
     justify-content:space-between;
 
     align-items:center;
+
+    gap:10px;
 
     margin-top:18px;
 
@@ -1065,15 +1207,48 @@ body.dark .material-category{
     border-top:
         1px solid var(--border);
 
+}
+
+.material-status{
+
     color:var(--muted);
 
     font-size:11px;
+
 }
 
-.material-arrow{
-    color:var(--primary);
+.open-material-button{
+
+    border:0;
+
+    background:
+        var(--primary);
+
+    color:white;
+
+    padding:
+        9px 13px;
+
+    border-radius:9px;
+
+    font-size:11px;
 
     font-weight:800;
+
+    transition:.2s;
+
+    white-space:nowrap;
+
+}
+
+.open-material-button:hover{
+
+    background:
+        var(--primary-dark);
+
+    transform:
+        translateY(-1px);
+
 }
 
 
@@ -1082,6 +1257,7 @@ body.dark .material-category{
 ===================================================== */
 
 .empty-state{
+
     background:var(--card);
 
     border:
@@ -1095,11 +1271,7 @@ body.dark .material-category{
     text-align:center;
 
     color:var(--muted);
-}
 
-.empty-icon{
-    font-size:45px;
-    margin-bottom:10px;
 }
 
 
@@ -1108,18 +1280,25 @@ body.dark .material-category{
 ===================================================== */
 
 .detail-page{
+
     display:none;
+
 }
 
 .detail-page.active{
+
     display:block;
+
 }
 
 .dashboard-page.hidden{
+
     display:none;
+
 }
 
 .back-button{
+
     border:
         1px solid var(--border);
 
@@ -1140,18 +1319,20 @@ body.dark .material-category{
 
     margin-bottom:20px;
 
-    transition:.2s;
 }
 
 .back-button:hover{
+
     border-color:
         var(--primary);
 
     color:
         var(--primary);
+
 }
 
 .detail-hero{
+
     background:var(--card);
 
     border:
@@ -1165,12 +1346,15 @@ body.dark .material-category{
         var(--shadow);
 
     margin-bottom:20px;
+
 }
 
 .detail-category{
+
     display:inline-flex;
 
-    padding:6px 10px;
+    padding:
+        6px 10px;
 
     border-radius:20px;
 
@@ -1185,30 +1369,36 @@ body.dark .material-category{
     font-weight:800;
 
     margin-bottom:12px;
+
 }
 
 body.dark .detail-category{
+
     background:
         rgba(37,99,235,.15);
+
 }
 
 .detail-hero h2{
+
     font-size:31px;
 
     line-height:1.2;
 
     margin-bottom:10px;
+
 }
 
 .detail-summary{
+
     color:var(--muted);
 
     line-height:1.7;
 
-    max-width:900px;
 }
 
 .detail-layout{
+
     display:grid;
 
     grid-template-columns:
@@ -1217,18 +1407,20 @@ body.dark .detail-category{
 
     gap:20px;
 
-    align-items:start;
 }
 
 .detail-content{
+
     display:flex;
 
     flex-direction:column;
 
     gap:16px;
+
 }
 
 .detail-section{
+
     background:var(--card);
 
     border:
@@ -1241,9 +1433,11 @@ body.dark .detail-category{
 
     box-shadow:
         var(--shadow);
+
 }
 
 .detail-section-title{
+
     display:flex;
 
     align-items:center;
@@ -1255,10 +1449,13 @@ body.dark .detail-category{
     font-size:17px;
 
     font-weight:800;
+
 }
 
 .detail-section-title span{
+
     width:32px;
+
     height:32px;
 
     border-radius:9px;
@@ -1275,15 +1472,10 @@ body.dark .detail-category{
     color:
         var(--primary);
 
-    font-size:14px;
-}
-
-body.dark .detail-section-title span{
-    background:
-        rgba(37,99,235,.15);
 }
 
 .detail-text{
+
     color:var(--text);
 
     line-height:1.8;
@@ -1291,14 +1483,20 @@ body.dark .detail-section-title span{
     font-size:14px;
 
     white-space:pre-line;
+
 }
 
-.detail-text strong{
+.detail-text a{
+
     color:
         var(--primary);
+
+    text-decoration:underline;
+
 }
 
 .detail-sidebar{
+
     position:sticky;
 
     top:96px;
@@ -1308,9 +1506,11 @@ body.dark .detail-section-title span{
     flex-direction:column;
 
     gap:14px;
+
 }
 
 .info-card{
+
     background:var(--card);
 
     border:
@@ -1323,15 +1523,19 @@ body.dark .detail-section-title span{
 
     box-shadow:
         var(--shadow);
+
 }
 
 .info-card h4{
+
     font-size:14px;
 
     margin-bottom:12px;
+
 }
 
 .info-item{
+
     padding:
         10px 0;
 
@@ -1345,19 +1549,27 @@ body.dark .detail-section-title span{
     gap:10px;
 
     font-size:12px;
+
 }
 
 .info-item:last-child{
+
     border-bottom:0;
+
 }
 
 .info-item span:first-child{
+
     color:var(--muted);
+
 }
 
 .info-item span:last-child{
+
     font-weight:700;
+
     text-align:right;
+
 }
 
 
@@ -1366,6 +1578,7 @@ body.dark .detail-section-title span{
 ===================================================== */
 
 .modal{
+
     position:fixed;
 
     inset:0;
@@ -1385,13 +1598,17 @@ body.dark .detail-section-title span{
     justify-content:center;
 
     padding:20px;
+
 }
 
 .modal.show{
+
     display:flex;
+
 }
 
 .modal-box{
+
     width:
         min(760px,100%);
 
@@ -1406,12 +1623,12 @@ body.dark .detail-section-title span{
     border-radius:
         22px;
 
-    box-shadow:
-        0 30px 80px rgba(0,0,0,.3);
 }
 
 .modal-header{
-    padding:20px 22px;
+
+    padding:
+        20px 22px;
 
     border-bottom:
         1px solid var(--border);
@@ -1422,22 +1639,12 @@ body.dark .detail-section-title span{
 
     justify-content:space-between;
 
-    position:sticky;
-
-    top:0;
-
-    background:
-        var(--card);
-
-    z-index:2;
-}
-
-.modal-header h3{
-    font-size:18px;
 }
 
 .close-button{
+
     width:36px;
+
     height:36px;
 
     border:0;
@@ -1451,31 +1658,41 @@ body.dark .detail-section-title span{
     border-radius:10px;
 
     font-size:18px;
+
 }
 
 .modal-body{
+
     padding:22px;
+
 }
 
 .form-grid{
+
     display:grid;
 
     grid-template-columns:
         1fr 1fr;
 
     gap:15px;
+
 }
 
 .form-group{
+
     margin-bottom:15px;
+
 }
 
 .form-group.full{
+
     grid-column:
         1 / -1;
+
 }
 
 .form-group label{
+
     display:block;
 
     font-size:12px;
@@ -1483,17 +1700,13 @@ body.dark .detail-section-title span{
     font-weight:800;
 
     margin-bottom:7px;
-}
 
-.form-group label small{
-    color:var(--muted);
-
-    font-weight:400;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea{
+
     width:100%;
 
     border:
@@ -1514,25 +1727,16 @@ body.dark .detail-section-title span{
 
     resize:vertical;
 
-    transition:.2s;
 }
 
 .form-group textarea{
+
     min-height:105px;
-}
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{
-    border-color:
-        var(--primary);
-
-    box-shadow:
-        0 0 0 3px
-        rgba(37,99,235,.1);
 }
 
 .modal-footer{
+
     padding:
         16px 22px;
 
@@ -1545,15 +1749,10 @@ body.dark .detail-section-title span{
 
     gap:10px;
 
-    position:sticky;
-
-    bottom:0;
-
-    background:
-        var(--card);
 }
 
 .cancel-button{
+
     border:
         1px solid var(--border);
 
@@ -1569,9 +1768,11 @@ body.dark .detail-section-title span{
         11px 16px;
 
     font-weight:700;
+
 }
 
 .save-button{
+
     border:0;
 
     background:
@@ -1585,11 +1786,7 @@ body.dark .detail-section-title span{
         11px 18px;
 
     font-weight:700;
-}
 
-.save-button:disabled{
-    opacity:.6;
-    cursor:not-allowed;
 }
 
 
@@ -1598,9 +1795,11 @@ body.dark .detail-section-title span{
 ===================================================== */
 
 .toast-container{
+
     position:fixed;
 
     right:20px;
+
     bottom:20px;
 
     z-index:9000;
@@ -1613,9 +1812,11 @@ body.dark .detail-section-title span{
 
     width:
         min(380px,calc(100vw - 40px));
+
 }
 
 .toast{
+
     background:
         var(--card);
 
@@ -1632,61 +1833,38 @@ body.dark .detail-section-title span{
     box-shadow:
         0 15px 40px rgba(0,0,0,.15);
 
-    animation:
-        toastIn .25s ease;
 }
 
 .toast.success{
+
     border-left-color:
         var(--success);
+
 }
 
 .toast.error{
+
     border-left-color:
         var(--danger);
+
 }
 
 .toast-title{
+
     font-weight:800;
+
     font-size:13px;
+
     margin-bottom:3px;
+
 }
 
 .toast-message{
+
     color:var(--muted);
+
     font-size:12px;
-    line-height:1.5;
-}
 
-@keyframes toastIn{
-    from{
-        opacity:0;
-        transform:
-            translateY(10px);
-    }
-
-    to{
-        opacity:1;
-        transform:
-            translateY(0);
-    }
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-.footer{
-    text-align:center;
-
-    padding:
-        30px 0 15px;
-
-    color:
-        var(--muted);
-
-    font-size:11px;
 }
 
 
@@ -1697,207 +1875,198 @@ body.dark .detail-section-title span{
 @media(max-width:1200px){
 
     .material-grid{
+
         grid-template-columns:
             repeat(2,1fr);
+
     }
 
     .stats{
+
         grid-template-columns:
             repeat(2,1fr);
+
     }
 
     .detail-layout{
-        grid-template-columns:
-            1fr;
+
+        grid-template-columns:1fr;
+
     }
 
     .detail-sidebar{
+
         position:static;
 
         display:grid;
 
         grid-template-columns:
             repeat(2,1fr);
+
     }
 
 }
-
 
 @media(max-width:900px){
 
     .sidebar{
+
         transform:
             translateX(-100%);
+
     }
 
     .sidebar.open{
+
         transform:
             translateX(0);
+
     }
 
     .main{
+
         margin-left:0;
 
         width:100%;
+
     }
 
     .mobile-menu-button{
+
         display:flex;
+
     }
 
     .topbar{
+
         padding:
             0 18px;
+
     }
 
     .content{
+
         padding:20px;
+
     }
 
 }
-
 
 @media(max-width:700px){
 
     .hero{
+
         padding:25px 20px;
 
-        border-radius:19px;
     }
 
     .hero h2{
+
         font-size:25px;
+
     }
 
     .stats{
+
         grid-template-columns:
             1fr 1fr;
 
-        gap:10px;
-    }
-
-    .stat-card{
-        padding:14px;
-
-        gap:10px;
-    }
-
-    .stat-icon{
-        width:40px;
-        height:40px;
-        font-size:18px;
-    }
-
-    .stat-value{
-        font-size:19px;
     }
 
     .material-grid{
-        grid-template-columns:
-            1fr;
+
+        grid-template-columns:1fr;
+
     }
 
     .section-header{
+
         align-items:flex-start;
-    }
 
-    .add-button{
-        padding:
-            9px 11px;
-
-        font-size:12px;
-    }
-
-    .detail-hero{
-        padding:22px;
-    }
-
-    .detail-hero h2{
-        font-size:25px;
     }
 
     .detail-sidebar{
-        grid-template-columns:
-            1fr;
+
+        grid-template-columns:1fr;
+
     }
 
     .form-grid{
-        grid-template-columns:
-            1fr;
+
+        grid-template-columns:1fr;
+
     }
 
     .form-group.full{
+
         grid-column:auto;
-    }
 
-    .modal{
-        padding:10px;
-    }
-
-    .modal-box{
-        max-height:
-            calc(100vh - 20px);
-    }
-
-    .topbar{
-        height:68px;
-    }
-
-    .page-title{
-        font-size:15px;
-    }
-
-    .page-subtitle{
-        display:none;
     }
 
 }
-
 
 @media(max-width:480px){
 
     .content{
+
         padding:15px;
+
     }
 
     .stats{
-        grid-template-columns:
-            1fr;
+
+        grid-template-columns:1fr;
+
     }
 
     .hero-buttons{
+
         flex-direction:column;
+
     }
 
     .hero-button{
-        width:100%;
-        text-align:center;
-    }
 
-    .search-area{
-        flex-direction:column;
+        width:100%;
+
     }
 
     .section-header{
+
         flex-direction:column;
+
     }
 
     .add-button{
+
         width:100%;
+
         justify-content:center;
+
     }
 
-    .topbar-actions .icon-button{
-        width:38px;
-        height:38px;
+    .material-footer{
+
+        align-items:center;
+
+    }
+
+    .open-material-button{
+
+        padding:
+            9px 10px;
+
     }
 
 }
+
 </style>
+
 </head>
 
 
 <body>
+
 
 <!-- =====================================================
      LOADING
@@ -1921,10 +2090,6 @@ body.dark .detail-section-title span{
 </div>
 
 
-<!-- =====================================================
-     SIDEBAR OVERLAY
-===================================================== -->
-
 <div
     class="sidebar-overlay"
     id="sidebarOverlay"
@@ -1932,493 +2097,450 @@ body.dark .detail-section-title span{
 ></div>
 
 
-<!-- =====================================================
-     APP
-===================================================== -->
-
 <div class="app">
 
 
-    <!-- =================================================
-         SIDEBAR
-    ================================================= -->
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
 
-    <aside
-        class="sidebar"
-        id="sidebar"
-    >
+<aside
+    class="sidebar"
+    id="sidebar"
+>
 
-        <div class="sidebar-header">
+    <div class="sidebar-header">
 
-            <div class="brand">
+        <div class="brand">
 
-                <div class="brand-icon">
-                    📚
-                </div>
-
-                <div class="brand-text">
-
-                    <h1>
-                        MY LEARNING
-                    </h1>
-
-                    <span>
-                        Restaurant Operational Library
-                    </span>
-
-                </div>
-
+            <div class="brand-icon">
+                📚
             </div>
 
-        </div>
+            <div class="brand-text">
 
-
-        <div class="sidebar-search">
-
-            <div class="sidebar-search-box">
+                <h1>
+                    MY LEARNING
+                </h1>
 
                 <span>
-                    🔍
+                    Restaurant Operational Library
                 </span>
-
-                <input
-                    type="text"
-                    id="sidebarSearch"
-                    placeholder="Cari materi..."
-                    oninput="handleSearch(this.value)"
-                >
 
             </div>
 
         </div>
 
-
-        <div class="sidebar-title">
-            KATEGORI
-        </div>
+    </div>
 
 
-        <div
-            class="category-menu"
-            id="categoryMenu"
-        >
+    <div class="sidebar-search">
 
-            <button
-                class="category-button active"
-                onclick="filterCategory('ALL',this)"
+        <div class="sidebar-search-box">
+
+            <span>🔍</span>
+
+            <input
+                type="text"
+                id="sidebarSearch"
+                placeholder="Cari materi..."
+                oninput="handleSearch(this.value)"
             >
 
-                <span>
-                    🏠
-                </span>
+        </div>
 
-                <span>
-                    Semua Materi
-                </span>
+    </div>
 
-                <span
-                    class="category-count"
-                    id="allCount"
-                >
-                    0
-                </span>
 
-            </button>
+    <div class="sidebar-title">
+        KATEGORI
+    </div>
+
+
+    <div
+        class="category-menu"
+        id="categoryMenu"
+    ></div>
+
+
+    <div class="sidebar-footer">
+
+        <button
+            onclick="openAddMaterialModal()"
+        >
+            ➕ Tambah Materi
+        </button>
+
+        <button
+            onclick="toggleTheme()"
+        >
+            🌙 Mode Tampilan
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main">
+
+
+<header class="topbar">
+
+    <div class="topbar-left">
+
+        <button
+            class="mobile-menu-button"
+            onclick="toggleSidebar()"
+        >
+            ☰
+        </button>
+
+        <div>
+
+            <div
+                class="page-title"
+                id="pageTitle"
+            >
+                Dashboard
+            </div>
+
+            <div
+                class="page-subtitle"
+                id="pageSubtitle"
+            >
+                Pusat belajar operasional restoran
+            </div>
 
         </div>
 
+    </div>
 
-        <div class="sidebar-footer">
+
+    <div class="topbar-actions">
+
+        <button
+            class="icon-button"
+            onclick="loadData()"
+            title="Refresh"
+        >
+            🔄
+        </button>
+
+        <button
+            class="icon-button"
+            onclick="toggleTheme()"
+            title="Dark Mode"
+        >
+            🌓
+        </button>
+
+    </div>
+
+</header>
+
+
+<div class="content">
+
+
+<!-- =====================================================
+     DASHBOARD
+===================================================== -->
+
+<section
+    class="dashboard-page"
+    id="dashboardPage"
+>
+
+
+<div class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            📖 PERSONAL LEARNING CENTER
+        </div>
+
+        <h2>
+            Belajar Operasional Restoran
+            Lebih Terstruktur
+        </h2>
+
+        <p>
+            Tempat menyimpan, memahami dan
+            mengembangkan materi pembelajaran
+            operasional restoran berdasarkan
+            pengalaman dan proses kerja.
+        </p>
+
+        <div class="hero-buttons">
 
             <button
+                class="hero-button"
+                onclick="focusSearch()"
+            >
+                🔍 Cari Materi
+            </button>
+
+            <button
+                class="hero-button secondary"
                 onclick="openAddMaterialModal()"
             >
-                ➕ Tambah Materi
-            </button>
-
-            <button
-                onclick="toggleTheme()"
-            >
-                🌙 Mode Tampilan
+                ＋ Tambah Materi
             </button>
 
         </div>
 
-    </aside>
+    </div>
+
+</div>
 
 
-    <!-- =================================================
-         MAIN
-    ================================================= -->
+<!-- STATS -->
 
-    <main class="main">
+<div class="stats">
 
+    <div class="stat-card">
 
-        <!-- =============================================
-             TOPBAR
-        ============================================= -->
+        <div
+            class="stat-icon"
+            style="
+                --light:#eff6ff;
+                --icon:#2563eb;
+            "
+        >
+            📚
+        </div>
 
-        <header class="topbar">
+        <div>
 
-            <div class="topbar-left">
-
-                <button
-                    class="mobile-menu-button"
-                    onclick="toggleSidebar()"
-                >
-                    ☰
-                </button>
-
-                <div>
-
-                    <div
-                        class="page-title"
-                        id="pageTitle"
-                    >
-                        Dashboard
-                    </div>
-
-                    <div
-                        class="page-subtitle"
-                        id="pageSubtitle"
-                    >
-                        Pusat belajar operasional restoran
-                    </div>
-
-                </div>
-
+            <div
+                class="stat-value"
+                id="totalMaterials"
+            >
+                0
             </div>
 
-
-            <div class="topbar-actions">
-
-                <button
-                    class="icon-button"
-                    onclick="loadData()"
-                    title="Refresh"
-                >
-                    🔄
-                </button>
-
-                <button
-                    class="icon-button"
-                    onclick="toggleTheme()"
-                    title="Dark Mode"
-                >
-                    🌓
-                </button>
-
+            <div class="stat-label">
+                Total Materi
             </div>
-
-        </header>
-
-
-        <!-- =============================================
-             CONTENT
-        ============================================= -->
-
-        <div class="content">
-
-
-            <!-- =========================================
-                 DASHBOARD PAGE
-            ========================================= -->
-
-            <section
-                class="dashboard-page"
-                id="dashboardPage"
-            >
-
-
-                <!-- HERO -->
-
-                <div class="hero">
-
-                    <div class="hero-content">
-
-                        <div class="hero-label">
-                            📖 PERSONAL LEARNING CENTER
-                        </div>
-
-                        <h2>
-                            Belajar Operasional Restoran
-                            Lebih Terstruktur
-                        </h2>
-
-                        <p>
-                            Tempat menyimpan, memahami dan
-                            mengembangkan materi pembelajaran
-                            operasional restoran berdasarkan
-                            pengalaman dan proses kerja.
-                        </p>
-
-                        <div class="hero-buttons">
-
-                            <button
-                                class="hero-button"
-                                onclick="focusSearch()"
-                            >
-                                🔍 Cari Materi
-                            </button>
-
-                            <button
-                                class="hero-button secondary"
-                                onclick="openAddMaterialModal()"
-                            >
-                                ＋ Tambah Materi
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- STATS -->
-
-                <div class="stats">
-
-                    <div class="stat-card">
-
-                        <div
-                            class="stat-icon"
-                            style="
-                                --light:#eff6ff;
-                                --icon:#2563eb;
-                            "
-                        >
-                            📚
-                        </div>
-
-                        <div>
-
-                            <div
-                                class="stat-value"
-                                id="totalMaterials"
-                            >
-                                0
-                            </div>
-
-                            <div class="stat-label">
-                                Total Materi
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="stat-card">
-
-                        <div
-                            class="stat-icon"
-                            style="
-                                --light:#f5f3ff;
-                                --icon:#7c3aed;
-                            "
-                        >
-                            🗂️
-                        </div>
-
-                        <div>
-
-                            <div
-                                class="stat-value"
-                                id="totalCategories"
-                            >
-                                0
-                            </div>
-
-                            <div class="stat-label">
-                                Kategori
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="stat-card">
-
-                        <div
-                            class="stat-icon"
-                            style="
-                                --light:#f0fdf4;
-                                --icon:#16a34a;
-                            "
-                        >
-                            ✅
-                        </div>
-
-                        <div>
-
-                            <div
-                                class="stat-value"
-                                id="activeMaterials"
-                            >
-                                0
-                            </div>
-
-                            <div class="stat-label">
-                                Materi Aktif
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="stat-card">
-
-                        <div
-                            class="stat-icon"
-                            style="
-                                --light:#fffbeb;
-                                --icon:#f59e0b;
-                            "
-                        >
-                            🧠
-                        </div>
-
-                        <div>
-
-                            <div
-                                class="stat-value"
-                                id="learningCount"
-                            >
-                                0
-                            </div>
-
-                            <div class="stat-label">
-                                Sudah Dibuka
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- MATERIAL HEADER -->
-
-                <div class="section-header">
-
-                    <div>
-
-                        <h3>
-                            📚 Materi Pembelajaran
-                        </h3>
-
-                        <p>
-                            Pilih materi untuk membaca
-                            penjelasan lengkap.
-                        </p>
-
-                    </div>
-
-                    <button
-                        class="add-button"
-                        onclick="openAddMaterialModal()"
-                    >
-                        ＋ Tambah Materi
-                    </button>
-
-                </div>
-
-
-                <!-- SEARCH -->
-
-                <div class="search-area">
-
-                    <div class="search-box">
-
-                        <span>
-                            🔍
-                        </span>
-
-                        <input
-                            type="text"
-                            id="mainSearch"
-                            placeholder="Cari judul, kategori atau isi materi..."
-                            oninput="handleSearch(this.value)"
-                        >
-
-                    </div>
-
-                </div>
-
-
-                <!-- GRID -->
-
-                <div
-                    class="material-grid"
-                    id="materialGrid"
-                ></div>
-
-
-                <div class="footer">
-
-                    MY LEARNING CENTER
-                    •
-                    Restaurant Operational Library
-
-                    <br>
-
-                    V1 • Data terhubung dengan Google Spreadsheet
-
-                </div>
-
-            </section>
-
-
-            <!-- =========================================
-                 DETAIL PAGE
-            ========================================= -->
-
-            <section
-                class="detail-page"
-                id="detailPage"
-            >
-
-                <button
-                    class="back-button"
-                    onclick="backToDashboard()"
-                >
-                    ← Kembali ke Materi
-                </button>
-
-
-                <div
-                    class="detail-hero"
-                    id="detailHero"
-                ></div>
-
-
-                <div class="detail-layout">
-
-
-                    <div
-                        class="detail-content"
-                        id="detailContent"
-                    ></div>
-
-
-                    <aside
-                        class="detail-sidebar"
-                        id="detailSidebar"
-                    ></aside>
-
-
-                </div>
-
-            </section>
-
 
         </div>
 
-    </main>
+    </div>
+
+
+    <div class="stat-card">
+
+        <div
+            class="stat-icon"
+            style="
+                --light:#f5f3ff;
+                --icon:#7c3aed;
+            "
+        >
+            🗂️
+        </div>
+
+        <div>
+
+            <div
+                class="stat-value"
+                id="totalCategories"
+            >
+                0
+            </div>
+
+            <div class="stat-label">
+                Kategori
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div
+            class="stat-icon"
+            style="
+                --light:#f0fdf4;
+                --icon:#16a34a;
+            "
+        >
+            ✅
+        </div>
+
+        <div>
+
+            <div
+                class="stat-value"
+                id="activeMaterials"
+            >
+                0
+            </div>
+
+            <div class="stat-label">
+                Materi Aktif
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div
+            class="stat-icon"
+            style="
+                --light:#fffbeb;
+                --icon:#f59e0b;
+            "
+        >
+            🧠
+        </div>
+
+        <div>
+
+            <div
+                class="stat-value"
+                id="learningCount"
+            >
+                0
+            </div>
+
+            <div class="stat-label">
+                Sudah Dibuka
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- MATERIAL HEADER -->
+
+<div class="section-header">
+
+    <div>
+
+        <h3>
+            📚 Materi Pembelajaran
+        </h3>
+
+        <p>
+            Pilih materi untuk membaca
+            penjelasan lengkap.
+        </p>
+
+    </div>
+
+    <button
+        class="add-button"
+        onclick="openAddMaterialModal()"
+    >
+        ＋ Tambah Materi
+    </button>
+
+</div>
+
+
+<!-- SEARCH -->
+
+<div class="search-area">
+
+    <div class="search-box">
+
+        <span>🔍</span>
+
+        <input
+            type="text"
+            id="mainSearch"
+            placeholder="Cari judul, kategori atau isi materi..."
+            oninput="handleSearch(this.value)"
+        >
+
+    </div>
+
+</div>
+
+
+<!-- MATERIAL -->
+
+<div
+    class="material-grid"
+    id="materialGrid"
+></div>
+
+
+<div class="footer">
+
+    MY LEARNING CENTER
+    •
+    Restaurant Operational Library
+
+    <br>
+
+    V1 • Google Spreadsheet Database
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+     DETAIL
+===================================================== -->
+
+<section
+    class="detail-page"
+    id="detailPage"
+>
+
+    <button
+        class="back-button"
+        onclick="backToDashboard()"
+    >
+        ← Kembali ke Materi
+    </button>
+
+
+    <div
+        class="detail-hero"
+        id="detailHero"
+    ></div>
+
+
+    <div class="detail-layout">
+
+        <div
+            class="detail-content"
+            id="detailContent"
+        ></div>
+
+
+        <aside
+            class="detail-sidebar"
+            id="detailSidebar"
+        ></aside>
+
+    </div>
+
+</section>
+
+
+</div>
+
+</main>
 
 </div>
 
@@ -2432,221 +2554,220 @@ body.dark .detail-section-title span{
     id="addMaterialModal"
 >
 
-    <div class="modal-box">
+<div class="modal-box">
 
 
-        <div class="modal-header">
+<div class="modal-header">
 
-            <h3>
-                ➕ Tambah Materi Baru
-            </h3>
+    <h3>
+        ➕ Tambah Materi Baru
+    </h3>
 
-            <button
-                class="close-button"
-                onclick="closeAddMaterialModal()"
-            >
-                ×
-            </button>
-
-        </div>
-
-
-        <form
-            id="materialForm"
-            onsubmit="submitMaterial(event)"
-        >
-
-            <div class="modal-body">
-
-
-                <div class="form-grid">
-
-
-                    <div class="form-group full">
-
-                        <label>
-                            Judul Materi *
-                        </label>
-
-                        <input
-                            type="text"
-                            id="formJudul"
-                            required
-                            placeholder="Contoh: Forecasting"
-                        >
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label>
-                            Kategori *
-                        </label>
-
-                        <select
-                            id="formKategori"
-                            required
-                        >
-
-                            <option value="">
-                                Pilih kategori
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label>
-                            Ringkasan
-                        </label>
-
-                        <input
-                            type="text"
-                            id="formRingkasan"
-                            placeholder="Ringkasan singkat materi"
-                        >
-
-                    </div>
-
-
-                    <div class="form-group full">
-
-                        <label>
-                            Pengertian
-                        </label>
-
-                        <textarea
-                            id="formPengertian"
-                            placeholder="Jelaskan pengertian materi..."
-                        ></textarea>
-
-                    </div>
-
-
-                    <div class="form-group full">
-
-                        <label>
-                            Materi Lengkap
-                        </label>
-
-                        <textarea
-                            id="formMateri"
-                            style="min-height:180px"
-                            placeholder="Tuliskan materi secara detail..."
-                        ></textarea>
-
-                    </div>
-
-
-                    <div class="form-group full">
-
-                        <label>
-                            Contoh
-                        </label>
-
-                        <textarea
-                            id="formContoh"
-                            placeholder="Tuliskan contoh penerapan..."
-                        ></textarea>
-
-                    </div>
-
-
-                    <div class="form-group full">
-
-                        <label>
-                            Analisa
-                        </label>
-
-                        <textarea
-                            id="formAnalisa"
-                            placeholder="Bagaimana cara menganalisa materi ini?"
-                        ></textarea>
-
-                    </div>
-
-
-                    <div class="form-group full">
-
-                        <label>
-                            Dampak
-                        </label>
-
-                        <textarea
-                            id="formDampak"
-                            placeholder="Apa dampak atau pengaruhnya?"
-                        ></textarea>
-
-                    </div>
-
-
-                    <div class="form-group full">
-
-                        <label>
-                            Kesalahan Umum
-                        </label>
-
-                        <textarea
-                            id="formKesalahan"
-                            placeholder="Apa kesalahan yang sering terjadi?"
-                        ></textarea>
-
-                    </div>
-
-
-                    <div class="form-group full">
-
-                        <label>
-                            Kesimpulan
-                        </label>
-
-                        <textarea
-                            id="formKesimpulan"
-                            placeholder="Tuliskan kesimpulan materi..."
-                        ></textarea>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-
-            <div class="modal-footer">
-
-                <button
-                    type="button"
-                    class="cancel-button"
-                    onclick="closeAddMaterialModal()"
-                >
-                    Batal
-                </button>
-
-                <button
-                    type="submit"
-                    class="save-button"
-                    id="saveMaterialButton"
-                >
-                    💾 Simpan Materi
-                </button>
-
-            </div>
-
-        </form>
-
-    </div>
+    <button
+        class="close-button"
+        onclick="closeAddMaterialModal()"
+    >
+        ×
+    </button>
 
 </div>
 
 
-<!-- =====================================================
-     TOAST
-===================================================== -->
+<form
+    id="materialForm"
+    onsubmit="submitMaterial(event)"
+>
+
+
+<div class="modal-body">
+
+<div class="form-grid">
+
+
+<div class="form-group full">
+
+<label>
+    Judul Materi *
+</label>
+
+<input
+    type="text"
+    id="formJudul"
+    required
+    placeholder="Contoh: Forecasting"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Kategori *
+</label>
+
+<select
+    id="formKategori"
+    required
+>
+
+<option value="">
+    Pilih kategori
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Ringkasan
+</label>
+
+<input
+    type="text"
+    id="formRingkasan"
+    placeholder="Ringkasan singkat materi"
+>
+
+</div>
+
+
+<div class="form-group full">
+
+<label>
+    Pengertian
+</label>
+
+<textarea
+    id="formPengertian"
+    placeholder="Jelaskan pengertian materi..."
+></textarea>
+
+</div>
+
+
+<div class="form-group full">
+
+<label>
+    Materi Lengkap
+</label>
+
+<textarea
+    id="formMateri"
+    style="min-height:180px"
+    placeholder="Tuliskan materi secara detail..."
+></textarea>
+
+</div>
+
+
+<div class="form-group full">
+
+<label>
+    Contoh
+</label>
+
+<textarea
+    id="formContoh"
+    placeholder="Tuliskan contoh penerapan..."
+></textarea>
+
+</div>
+
+
+<div class="form-group full">
+
+<label>
+    Analisa
+</label>
+
+<textarea
+    id="formAnalisa"
+    placeholder="Bagaimana cara menganalisa materi ini?"
+></textarea>
+
+</div>
+
+
+<div class="form-group full">
+
+<label>
+    Dampak
+</label>
+
+<textarea
+    id="formDampak"
+    placeholder="Apa dampak atau pengaruhnya?"
+></textarea>
+
+</div>
+
+
+<div class="form-group full">
+
+<label>
+    Kesalahan Umum
+</label>
+
+<textarea
+    id="formKesalahan"
+    placeholder="Apa kesalahan yang sering terjadi?"
+></textarea>
+
+</div>
+
+
+<div class="form-group full">
+
+<label>
+    Kesimpulan
+</label>
+
+<textarea
+    id="formKesimpulan"
+    placeholder="Tuliskan kesimpulan materi..."
+></textarea>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="modal-footer">
+
+<button
+    type="button"
+    class="cancel-button"
+    onclick="closeAddMaterialModal()"
+>
+    Batal
+</button>
+
+<button
+    type="submit"
+    class="save-button"
+    id="saveMaterialButton"
+>
+    💾 Simpan Materi
+</button>
+
+</div>
+
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- TOAST -->
 
 <div
     class="toast-container"
@@ -2657,25 +2778,20 @@ body.dark .detail-section-title span{
 <script>
 
 /* =====================================================
-   CONFIGURATION
+   API URL
 ===================================================== */
 
 /*
- * GANTI URL DI BAWAH INI DENGAN URL WEB APP
- * GOOGLE APPS SCRIPT KAMU.
- *
- * Contoh:
- *
- * const API_URL =
- * "https://script.google.com/macros/s/XXXXXXXXXXXX/exec";
- */
+   MASUKKAN URL WEB APP APPS SCRIPT KAMU
+   YANG SEKARANG SUDAH BERHASIL MENAMPILKAN JSON.
+*/
 
 const API_URL =
-    "https://script.google.com/macros/s/AKfycbzdRtqmzwbnp1bKqRrpgbxq6zDz9KXyIy6PTMBdwV4M9s2pbFbQvFm9s4SRFcpmEfHC/exec";
+    "PASTE_WEB_APP_URL_KAMU_DI_SINI";
 
 
 /* =====================================================
-   STATE
+   GLOBAL STATE
 ===================================================== */
 
 let materials = [];
@@ -2694,7 +2810,7 @@ let learningHistory = [];
 
 
 /* =====================================================
-   DOM READY
+   START
 ===================================================== */
 
 document.addEventListener(
@@ -2719,7 +2835,6 @@ async function loadData(){
 
     showLoading(true);
 
-
     try{
 
         if(
@@ -2730,7 +2845,7 @@ async function loadData(){
         ){
 
             throw new Error(
-                "URL Web App belum dimasukkan ke index.html."
+                "URL Web App belum dimasukkan."
             );
 
         }
@@ -2747,7 +2862,7 @@ async function loadData(){
         if(!response.ok){
 
             throw new Error(
-                "Gagal mengambil data materi."
+                "Gagal mengambil database."
             );
 
         }
@@ -2763,10 +2878,8 @@ async function loadData(){
         ){
 
             throw new Error(
-                result &&
-                result.message
-                    ? result.message
-                    : "API tidak mengembalikan data."
+                result?.message ||
+                "API tidak mengembalikan data."
             );
 
         }
@@ -2777,10 +2890,6 @@ async function loadData(){
                 ? result.data
                 : [];
 
-
-        /*
-         * LOAD CATEGORY
-         */
 
         try{
 
@@ -2796,22 +2905,15 @@ async function loadData(){
                 await categoryResponse.json();
 
 
-            if(
-                categoryResult &&
-                categoryResult.success
-            ){
-
-                categories =
-                    Array.isArray(
-                        categoryResult.data
-                    )
-                        ? categoryResult.data
-                        : [];
-
-            }
+            categories =
+                Array.isArray(
+                    categoryResult?.data
+                )
+                    ? categoryResult.data
+                    : [];
 
         }
-        catch(categoryError){
+        catch(error){
 
             categories =
                 buildCategoriesFromMaterials();
@@ -2821,20 +2923,17 @@ async function loadData(){
 
         renderAll();
 
-
-        showToast(
-            "Data berhasil dimuat.",
-            "success"
-        );
-
     }
     catch(error){
 
-        console.error(error);
+        console.error(
+            "LOAD ERROR:",
+            error
+        );
+
 
         materials = [];
 
-        categories = [];
 
         renderAll();
 
@@ -2856,7 +2955,7 @@ async function loadData(){
 
 
 /* =====================================================
-   BUILD CATEGORY FALLBACK
+   FALLBACK CATEGORY
 ===================================================== */
 
 function buildCategoriesFromMaterials(){
@@ -2880,8 +2979,6 @@ function buildCategoriesFromMaterials(){
             ID:index + 1,
 
             KATEGORI:category,
-
-            DESKRIPSI:"",
 
             STATUS:"Aktif"
 
@@ -2909,7 +3006,7 @@ function renderAll(){
 
 
 /* =====================================================
-   UPDATE STATS
+   STATS
 ===================================================== */
 
 function updateStats(){
@@ -2941,10 +3038,6 @@ function updateStats(){
         ].length;
 
 
-    const learning =
-        learningHistory.length;
-
-
     document.getElementById(
         "totalMaterials"
     ).textContent =
@@ -2966,19 +3059,13 @@ function updateStats(){
     document.getElementById(
         "learningCount"
     ).textContent =
-        learning;
-
-
-    document.getElementById(
-        "allCount"
-    ).textContent =
-        total;
+        learningHistory.length;
 
 }
 
 
 /* =====================================================
-   RENDER CATEGORIES
+   CATEGORIES
 ===================================================== */
 
 function renderCategories(){
@@ -2992,47 +3079,16 @@ function renderCategories(){
     menu.innerHTML = "";
 
 
-    const allButton =
-        document.createElement(
-            "button"
-        );
-
-
-    allButton.className =
-        "category-button" +
-        (
-            currentCategory === "ALL"
-                ? " active"
-                : ""
-        );
-
-
-    allButton.onclick =
-        function(){
-
-            filterCategory(
-                "ALL",
-                allButton
-            );
-
-        };
-
-
-    allButton.innerHTML = `
-        <span>🏠</span>
-        <span>Semua Materi</span>
-        <span class="category-count">
-            ${materials.length}
-        </span>
-    `;
-
-
-    menu.appendChild(
-        allButton
+    createCategoryButton(
+        menu,
+        "ALL",
+        "🏠",
+        "Semua Materi",
+        materials.length
     );
 
 
-    const categoryNames =
+    const names =
         [
             ...new Set(
                 materials
@@ -3043,43 +3099,11 @@ function renderCategories(){
                     .filter(Boolean)
             )
         ]
-        .sort(
-            (a,b) =>
-                String(a)
-                    .localeCompare(
-                        String(b)
-                    )
-        );
+        .sort();
 
 
-    categoryNames.forEach(
+    names.forEach(
         category => {
-
-            const button =
-                document.createElement(
-                    "button"
-                );
-
-
-            button.className =
-                "category-button" +
-                (
-                    currentCategory === category
-                        ? " active"
-                        : ""
-                );
-
-
-            button.onclick =
-                function(){
-
-                    filterCategory(
-                        category,
-                        button
-                    );
-
-                };
-
 
             const count =
                 materials.filter(
@@ -3089,23 +3113,12 @@ function renderCategories(){
                 ).length;
 
 
-            button.innerHTML = `
-                <span>
-                    ${getCategoryIcon(category)}
-                </span>
-
-                <span>
-                    ${escapeHtml(category)}
-                </span>
-
-                <span class="category-count">
-                    ${count}
-                </span>
-            `;
-
-
-            menu.appendChild(
-                button
+            createCategoryButton(
+                menu,
+                category,
+                getCategoryIcon(category),
+                category,
+                count
             );
 
         }
@@ -3114,24 +3127,70 @@ function renderCategories(){
 }
 
 
-/* =====================================================
-   FILTER CATEGORY
-===================================================== */
-
-function filterCategory(
+function createCategoryButton(
+    menu,
     category,
-    button
+    icon,
+    name,
+    count
 ){
 
-    currentCategory =
-        category;
+    const button =
+        document.createElement(
+            "button"
+        );
 
 
-    renderCategories();
+    button.className =
+        "category-button" +
+        (
+            currentCategory === category
+                ? " active"
+                : ""
+        );
 
-    renderMaterialGrid();
 
-    closeSidebar();
+    button.type =
+        "button";
+
+
+    button.innerHTML = `
+
+        <span>
+            ${icon}
+        </span>
+
+        <span>
+            ${escapeHtml(name)}
+        </span>
+
+        <span class="category-count">
+            ${count}
+        </span>
+
+    `;
+
+
+    button.addEventListener(
+        "click",
+        function(){
+
+            currentCategory =
+                category;
+
+            renderCategories();
+
+            renderMaterialGrid();
+
+            closeSidebar();
+
+        }
+    );
+
+
+    menu.appendChild(
+        button
+    );
 
 }
 
@@ -3148,35 +3207,33 @@ function handleSearch(value){
             .trim();
 
 
-    const mainSearch =
+    const main =
         document.getElementById(
             "mainSearch"
         );
 
 
-    const sidebarSearch =
+    const side =
         document.getElementById(
             "sidebarSearch"
         );
 
 
     if(
-        document.activeElement !==
-        mainSearch
+        document.activeElement !== main
     ){
 
-        mainSearch.value =
+        main.value =
             value;
 
     }
 
 
     if(
-        document.activeElement !==
-        sidebarSearch
+        document.activeElement !== side
     ){
 
-        sidebarSearch.value =
+        side.value =
             value;
 
     }
@@ -3188,7 +3245,7 @@ function handleSearch(value){
 
 
 /* =====================================================
-   FILTER MATERIALS
+   FILTER
 ===================================================== */
 
 function getFilteredMaterials(){
@@ -3196,21 +3253,26 @@ function getFilteredMaterials(){
     return materials.filter(
         item => {
 
-            const categoryMatch =
-                currentCategory === "ALL" ||
+            const category =
                 String(
                     item["KATEGORI"] || ""
-                )
-                === currentCategory;
+                );
 
 
-            if(!categoryMatch){
+            if(
+                currentCategory !== "ALL" &&
+                category !== currentCategory
+            ){
+
                 return false;
+
             }
 
 
             if(!currentSearch){
+
                 return true;
+
             }
 
 
@@ -3234,6 +3296,8 @@ function getFilteredMaterials(){
 
                 item["DAMPAK"],
 
+                item["KESALAHAN UMUM"],
+
                 item["KESIMPULAN"]
 
             ]
@@ -3252,7 +3316,7 @@ function getFilteredMaterials(){
 
 
 /* =====================================================
-   RENDER MATERIAL GRID
+   RENDER MATERIAL
 ===================================================== */
 
 function renderMaterialGrid(){
@@ -3263,11 +3327,14 @@ function renderMaterialGrid(){
         );
 
 
-    const filtered =
+    const list =
         getFilteredMaterials();
 
 
-    if(filtered.length === 0){
+    grid.innerHTML = "";
+
+
+    if(!list.length){
 
         grid.innerHTML = `
 
@@ -3276,7 +3343,7 @@ function renderMaterialGrid(){
                 style="grid-column:1/-1"
             >
 
-                <div class="empty-icon">
+                <div style="font-size:45px">
                     🔎
                 </div>
 
@@ -3285,8 +3352,8 @@ function renderMaterialGrid(){
                 </h3>
 
                 <p>
-                    Coba gunakan kata pencarian lain
-                    atau pilih kategori berbeda.
+                    Coba gunakan kata pencarian
+                    yang berbeda.
                 </p>
 
             </div>
@@ -3298,10 +3365,7 @@ function renderMaterialGrid(){
     }
 
 
-    grid.innerHTML = "";
-
-
-    filtered.forEach(
+    list.forEach(
         item => {
 
             const card =
@@ -3314,24 +3378,40 @@ function renderMaterialGrid(){
                 "material-card";
 
 
-            card.onclick =
+            /*
+             * CARD SENDIRI JUGA BISA DIKLIK
+             */
+
+            card.addEventListener(
+                "click",
                 function(){
 
                     openMaterial(
                         item["ID"]
                     );
 
-                };
+                }
+            );
 
 
-            const category =
-                item["KATEGORI"] ||
-                "General";
+            const id =
+                String(
+                    item["ID"] || ""
+                );
 
 
             const title =
-                item["JUDUL"] ||
-                "Tanpa Judul";
+                String(
+                    item["JUDUL"] ||
+                    "Tanpa Judul"
+                );
+
+
+            const category =
+                String(
+                    item["KATEGORI"] ||
+                    "General"
+                );
 
 
             const summary =
@@ -3340,9 +3420,9 @@ function renderMaterialGrid(){
                 "Belum ada ringkasan.";
 
 
-            const opened =
+            const alreadyOpened =
                 learningHistory.includes(
-                    String(item["ID"])
+                    id
                 );
 
 
@@ -3358,9 +3438,7 @@ function renderMaterialGrid(){
 
                     <div class="material-id">
 
-                        ${escapeHtml(
-                            item["ID"] || ""
-                        )}
+                        ${escapeHtml(id)}
 
                     </div>
 
@@ -3392,25 +3470,65 @@ function renderMaterialGrid(){
 
                 <div class="material-footer">
 
-                    <span>
+                    <span class="material-status">
 
                         ${
-                            opened
+                            alreadyOpened
                                 ? "✓ Sudah dibuka"
-                                : "Belum dipelajari"
+                                : "Belum dibuka"
                         }
 
                     </span>
 
-                    <span class="material-arrow">
 
-                        Buka →
+                    <!-- =================================
+                         TOMBOL BUKA MATERI
+                         FIX UTAMA
+                    ================================== -->
 
-                    </span>
+                    <button
+                        type="button"
+                        class="open-material-button"
+                    >
+                        BUKA MATERI →
+                    </button>
 
                 </div>
 
             `;
+
+
+            /*
+             * AMBIL BUTTON SETELAH HTML DIBUAT
+             */
+
+            const openButton =
+                card.querySelector(
+                    ".open-material-button"
+                );
+
+
+            /*
+             * EVENT KHUSUS BUTTON
+             *
+             * stopPropagation mencegah event
+             * berjalan dua kali.
+             */
+
+            openButton.addEventListener(
+                "click",
+                function(event){
+
+                    event.preventDefault();
+
+                    event.stopPropagation();
+
+                    openMaterial(
+                        item["ID"]
+                    );
+
+                }
+            );
 
 
             grid.appendChild(
@@ -3429,13 +3547,25 @@ function renderMaterialGrid(){
 
 function openMaterial(id){
 
+    console.log(
+        "OPEN MATERIAL:",
+        id
+    );
+
+
+    const targetId =
+        String(id || "")
+            .trim();
+
+
     const item =
         materials.find(
             material =>
                 String(
-                    material["ID"]
+                    material["ID"] || ""
                 )
-                === String(id)
+                .trim()
+                === targetId
         );
 
 
@@ -3444,6 +3574,12 @@ function openMaterial(id){
         showToast(
             "Materi tidak ditemukan.",
             "error"
+        );
+
+        console.error(
+            "ID tidak ditemukan:",
+            targetId,
+            materials
         );
 
         return;
@@ -3456,25 +3592,18 @@ function openMaterial(id){
 
 
     /*
-     * HISTORY
+     * SIMPAN HISTORY
      */
-
-    const materialId =
-        String(
-            item["ID"]
-        );
-
 
     if(
         !learningHistory.includes(
-            materialId
+            targetId
         )
     ){
 
         learningHistory.push(
-            materialId
+            targetId
         );
-
 
         saveLearningHistory();
 
@@ -3484,14 +3613,14 @@ function openMaterial(id){
     updateStats();
 
 
-    /*
-     * HERO
-     */
-
     const category =
         item["KATEGORI"] ||
         "General";
 
+
+    /*
+     * DETAIL HERO
+     */
 
     document.getElementById(
         "detailHero"
@@ -3522,7 +3651,6 @@ function openMaterial(id){
 
             ${escapeHtml(
                 item["RINGKASAN"] ||
-                item["PENGERTIAN"] ||
                 ""
             )}
 
@@ -3611,17 +3739,17 @@ function openMaterial(id){
             }
 
 
-            const element =
+            const box =
                 document.createElement(
                     "section"
                 );
 
 
-            element.className =
+            box.className =
                 "detail-section";
 
 
-            element.innerHTML = `
+            box.innerHTML = `
 
                 <div class="detail-section-title">
 
@@ -3644,7 +3772,7 @@ function openMaterial(id){
 
 
             content.appendChild(
-                element
+                box
             );
 
         }
@@ -3652,7 +3780,7 @@ function openMaterial(id){
 
 
     /*
-     * SIDEBAR
+     * INFO SIDEBAR
      */
 
     document.getElementById(
@@ -3704,30 +3832,24 @@ function openMaterial(id){
 
             </div>
 
-
-            <div class="info-item">
-
-                <span>Dibaca</span>
-
-                <span>
-                    ✓
-                </span>
-
-            </div>
-
         </div>
 
 
         <div class="info-card">
 
             <h4>
-                🧭 Navigasi Belajar
+                🧭 Navigasi
             </h4>
 
 
             <button
+                type="button"
                 class="add-button"
-                style="width:100%;justify-content:center;margin-bottom:8px"
+                style="
+                    width:100%;
+                    justify-content:center;
+                    margin-bottom:8px;
+                "
                 onclick="backToDashboard()"
             >
                 ← Semua Materi
@@ -3735,6 +3857,7 @@ function openMaterial(id){
 
 
             <button
+                type="button"
                 class="cancel-button"
                 style="width:100%"
                 onclick="openAddMaterialModal()"
@@ -3748,7 +3871,7 @@ function openMaterial(id){
 
 
     /*
-     * PAGE SWITCH
+     * PINDAH HALAMAN
      */
 
     document.getElementById(
@@ -3778,6 +3901,9 @@ function openMaterial(id){
         "Materi pembelajaran";
 
 
+    closeSidebar();
+
+
     window.scrollTo({
         top:0,
         behavior:"smooth"
@@ -3787,7 +3913,7 @@ function openMaterial(id){
 
 
 /* =====================================================
-   BACK TO DASHBOARD
+   BACK
 ===================================================== */
 
 function backToDashboard(){
@@ -3838,7 +3964,7 @@ function populateCategorySelect(){
         );
 
 
-    const current =
+    const oldValue =
         select.value;
 
 
@@ -3851,7 +3977,7 @@ function populateCategorySelect(){
     `;
 
 
-    const categoryNames =
+    const names =
         [
             ...new Set(
                 materials
@@ -3862,16 +3988,10 @@ function populateCategorySelect(){
                     .filter(Boolean)
             )
         ]
-        .sort(
-            (a,b) =>
-                String(a)
-                    .localeCompare(
-                        String(b)
-                    )
-        );
+        .sort();
 
 
-    categoryNames.forEach(
+    names.forEach(
         category => {
 
             const option =
@@ -3896,10 +4016,10 @@ function populateCategorySelect(){
     );
 
 
-    if(current){
+    if(oldValue){
 
         select.value =
-            current;
+            oldValue;
 
     }
 
@@ -3907,7 +4027,7 @@ function populateCategorySelect(){
 
 
 /* =====================================================
-   OPEN ADD MODAL
+   ADD MODAL
 ===================================================== */
 
 function openAddMaterialModal(){
@@ -3925,24 +4045,8 @@ function openAddMaterialModal(){
     document.body.style.overflow =
         "hidden";
 
-
-    setTimeout(
-        () => {
-
-            document.getElementById(
-                "formJudul"
-            ).focus();
-
-        },
-        100
-    );
-
 }
 
-
-/* =====================================================
-   CLOSE ADD MODAL
-===================================================== */
 
 function closeAddMaterialModal(){
 
@@ -3960,7 +4064,7 @@ function closeAddMaterialModal(){
 
 
 /* =====================================================
-   SUBMIT MATERIAL
+   SUBMIT
 ===================================================== */
 
 async function submitMaterial(event){
@@ -3984,8 +4088,7 @@ async function submitMaterial(event){
 
     const data = {
 
-        action:
-            "addMaterial",
+        action:"addMaterial",
 
         JUDUL:
             document.getElementById(
@@ -4042,11 +4145,6 @@ async function submitMaterial(event){
 
     try{
 
-        /*
-         * Apps Script menerima form-urlencoded
-         * sehingga tidak menggunakan application/json.
-         */
-
         const body =
             new URLSearchParams();
 
@@ -4077,18 +4175,12 @@ async function submitMaterial(event){
                         "application/x-www-form-urlencoded;charset=UTF-8"
                 },
 
-                body:body.toString()
+                body:
+                    body.toString()
 
             }
         );
 
-
-        /*
-         * Karena mode no-cors membuat response
-         * tidak dapat dibaca browser,
-         * kita reload data setelah server
-         * mendapatkan request.
-         */
 
         closeAddMaterialModal();
 
@@ -4099,30 +4191,24 @@ async function submitMaterial(event){
 
 
         showToast(
-            "Materi dikirim ke Google Spreadsheet. Memuat data terbaru...",
+            "Materi berhasil dikirim.",
             "success"
         );
 
 
         setTimeout(
-            async function(){
-
-                await loadData();
-
-            },
+            loadData,
             1500
         );
-
 
     }
     catch(error){
 
         console.error(error);
 
-
         showToast(
             error.message ||
-            "Gagal mengirim materi.",
+            "Gagal menyimpan materi.",
             "error"
         );
 
@@ -4131,7 +4217,6 @@ async function submitMaterial(event){
 
         button.disabled =
             false;
-
 
         button.textContent =
             "💾 Simpan Materi";
@@ -4142,7 +4227,7 @@ async function submitMaterial(event){
 
 
 /* =====================================================
-   FORMAT TEXT
+   TEXT FORMAT
 ===================================================== */
 
 function formatText(value){
@@ -4154,7 +4239,22 @@ function formatText(value){
 
 
     /*
-     * Bold sederhana
+     * Apps Script JSON kadang membawa
+     * karakter literal \n.
+     *
+     * Kita ubah agar tampil sebagai
+     * baris baru.
+     */
+
+    text =
+        text.replace(
+            /\\n/g,
+            "\n"
+        );
+
+
+    /*
+     * Bold
      */
 
     text =
@@ -4164,35 +4264,13 @@ function formatText(value){
         );
 
 
-    /*
-     * Judul uppercase
-     */
-
-    text =
-        text.replace(
-            /^([A-Z][A-Z0-9 &()\-]+):$/gm,
-            "<strong>$1:</strong>"
-        );
-
-
-    /*
-     * URL
-     */
-
-    text =
-        text.replace(
-            /(https?:\/\/[^\s]+)/g,
-            '<a href="$1" target="_blank" rel="noopener">$1</a>'
-        );
-
-
     return text;
 
 }
 
 
 /* =====================================================
-   CLEAN TEXT
+   CLEAN
 ===================================================== */
 
 function cleanText(value){
@@ -4214,7 +4292,7 @@ function cleanText(value){
 
 
 /* =====================================================
-   ESCAPE HTML
+   ESCAPE
 ===================================================== */
 
 function escapeHtml(value){
@@ -4281,7 +4359,7 @@ function getCategoryIcon(category){
 
 
 /* =====================================================
-   LEARNING HISTORY
+   HISTORY
 ===================================================== */
 
 function loadLearningHistory(){
@@ -4320,10 +4398,6 @@ function loadLearningHistory(){
 }
 
 
-/* =====================================================
-   SAVE LEARNING HISTORY
-===================================================== */
-
 function saveLearningHistory(){
 
     try{
@@ -4338,10 +4412,7 @@ function saveLearningHistory(){
     }
     catch(error){
 
-        console.warn(
-            "History tidak dapat disimpan.",
-            error
-        );
+        console.warn(error);
 
     }
 
@@ -4359,7 +4430,7 @@ function toggleTheme(){
         .toggle("dark");
 
 
-    const isDark =
+    const dark =
         document.body
             .classList
             .contains("dark");
@@ -4367,17 +4438,13 @@ function toggleTheme(){
 
     localStorage.setItem(
         "mlc_theme",
-        isDark
+        dark
             ? "dark"
             : "light"
     );
 
 }
 
-
-/* =====================================================
-   LOAD THEME
-===================================================== */
 
 function loadTheme(){
 
@@ -4387,7 +4454,9 @@ function loadTheme(){
         );
 
 
-    if(theme === "dark"){
+    if(
+        theme === "dark"
+    ){
 
         document.body
             .classList
@@ -4399,7 +4468,7 @@ function loadTheme(){
 
 
 /* =====================================================
-   FOCUS SEARCH
+   SEARCH FOCUS
 ===================================================== */
 
 function focusSearch(){
@@ -4422,7 +4491,7 @@ function focusSearch(){
 
 
 /* =====================================================
-   MOBILE SIDEBAR
+   SIDEBAR
 ===================================================== */
 
 function toggleSidebar(){
@@ -4467,7 +4536,7 @@ function closeSidebar(){
 
 function showLoading(show){
 
-    const screen =
+    const loading =
         document.getElementById(
             "loadingScreen"
         );
@@ -4475,14 +4544,14 @@ function showLoading(show){
 
     if(show){
 
-        screen
+        loading
             .classList
             .remove("hidden");
 
     }
     else{
 
-        screen
+        loading
             .classList
             .add("hidden");
 
@@ -4517,17 +4586,15 @@ function showToast(
         type;
 
 
-    const title =
-        type === "error"
-            ? "Terjadi Masalah"
-            : "Berhasil";
-
-
     toast.innerHTML = `
 
         <div class="toast-title">
 
-            ${title}
+            ${
+                type === "error"
+                    ? "Terjadi Masalah"
+                    : "Berhasil"
+            }
 
         </div>
 
@@ -4548,21 +4615,7 @@ function showToast(
     setTimeout(
         function(){
 
-            toast.style.opacity =
-                "0";
-
-            toast.style.transform =
-                "translateY(10px)";
-
-
-            setTimeout(
-                function(){
-
-                    toast.remove();
-
-                },
-                250
-            );
+            toast.remove();
 
         },
         3500
@@ -4572,7 +4625,7 @@ function showToast(
 
 
 /* =====================================================
-   CLOSE MODAL WHEN CLICK OUTSIDE
+   MODAL OUTSIDE
 ===================================================== */
 
 document.getElementById(
@@ -4595,7 +4648,7 @@ document.getElementById(
 
 
 /* =====================================================
-   ESC KEY
+   ESC
 ===================================================== */
 
 document.addEventListener(
@@ -4618,4 +4671,5 @@ document.addEventListener(
 </script>
 
 </body>
+
 </html>
