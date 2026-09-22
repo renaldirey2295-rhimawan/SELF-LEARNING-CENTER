@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+content="width=device-width, initial-scale=1.0">
 
 <title>MY LEARNING CENTER</title>
 
@@ -28,8 +28,10 @@
 
     --bg:#f4f7fb;
     --card:#ffffff;
+
     --text:#111827;
     --muted:#64748b;
+
     --border:#e2e8f0;
 
     --sidebar:#0f172a;
@@ -38,20 +40,19 @@
     --shadow:
         0 10px 30px rgba(15,23,42,.08);
 
-    --radius:18px;
-
 }
 
 body.dark{
 
     --bg:#0b1120;
     --card:#111827;
+
     --text:#f8fafc;
     --muted:#94a3b8;
+
     --border:#243244;
 
     --sidebar:#020617;
-    --sidebar-text:#cbd5e1;
 
     --shadow:
         0 10px 30px rgba(0,0,0,.25);
@@ -82,20 +83,17 @@ html{
 body{
 
     font-family:
-        Inter,
-        Tahoma,
         Arial,
+        Tahoma,
         sans-serif;
 
-    background:var(--bg);
+    background:
+        var(--bg);
 
-    color:var(--text);
+    color:
+        var(--text);
 
     min-height:100vh;
-
-    transition:
-        background .25s ease,
-        color .25s ease;
 
 }
 
@@ -104,7 +102,7 @@ input,
 textarea,
 select{
 
-    font:inherit;
+    font-family:inherit;
 
 }
 
@@ -114,20 +112,12 @@ button{
 
 }
 
-a{
-
-    color:inherit;
-
-    text-decoration:none;
-
-}
-
 
 /* =====================================================
    LOADING
 ===================================================== */
 
-.loading-screen{
+.loading{
 
     position:fixed;
 
@@ -137,8 +127,10 @@ a{
         linear-gradient(
             135deg,
             #0f172a,
-            #1d4ed8
+            #2563eb
         );
+
+    color:white;
 
     display:flex;
 
@@ -150,15 +142,11 @@ a{
 
     z-index:99999;
 
-    color:white;
-
-    transition:
-        opacity .3s ease,
-        visibility .3s ease;
+    transition:.3s;
 
 }
 
-.loading-screen.hidden{
+.loading.hide{
 
     opacity:0;
 
@@ -166,37 +154,23 @@ a{
 
 }
 
-.loader-logo{
+.loading-logo{
 
-    width:80px;
+    font-size:50px;
 
-    height:80px;
-
-    border-radius:24px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:36px;
-
-    background:
-        rgba(255,255,255,.15);
-
-    margin-bottom:20px;
+    margin-bottom:15px;
 
 }
 
-.loader-spinner{
+.spinner{
 
-    width:38px;
+    width:40px;
 
-    height:38px;
+    height:40px;
 
     border:
-        4px solid rgba(255,255,255,.25);
+        4px solid
+        rgba(255,255,255,.25);
 
     border-top-color:white;
 
@@ -205,7 +179,7 @@ a{
     animation:
         spin .8s linear infinite;
 
-    margin-bottom:16px;
+    margin-bottom:15px;
 
 }
 
@@ -221,37 +195,26 @@ a{
 
 
 /* =====================================================
-   APP
-===================================================== */
-
-.app{
-
-    display:flex;
-
-    min-height:100vh;
-
-}
-
-
-/* =====================================================
    SIDEBAR
 ===================================================== */
 
 .sidebar{
 
-    width:280px;
-
-    background:var(--sidebar);
-
-    color:var(--sidebar-text);
+    width:265px;
 
     position:fixed;
 
     top:0;
 
+    left:0;
+
     bottom:0;
 
-    left:0;
+    background:
+        var(--sidebar);
+
+    color:
+        var(--sidebar-text);
 
     z-index:1000;
 
@@ -259,24 +222,19 @@ a{
 
     flex-direction:column;
 
-    border-right:
-        1px solid rgba(255,255,255,.05);
-
-    transition:
-        transform .3s ease;
-
 }
 
-.sidebar-header{
+.logo-area{
 
-    padding:24px 20px;
+    padding:25px 18px;
 
     border-bottom:
-        1px solid rgba(255,255,255,.08);
+        1px solid
+        rgba(255,255,255,.08);
 
 }
 
-.brand{
+.logo{
 
     display:flex;
 
@@ -286,19 +244,13 @@ a{
 
 }
 
-.brand-icon{
+.logo-icon{
 
-    width:46px;
+    width:47px;
 
-    height:46px;
+    height:47px;
 
-    border-radius:14px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
+    border-radius:15px;
 
     background:
         linear-gradient(
@@ -307,47 +259,43 @@ a{
             #7c3aed
         );
 
-    color:white;
+    display:flex;
 
-    font-size:23px;
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:25px;
 
 }
 
-.brand-text h1{
+.logo-title{
 
     font-size:17px;
 
-    color:white;
+    font-weight:bold;
 
-    font-weight:800;
+    color:white;
 
 }
 
-.brand-text span{
+.logo-subtitle{
 
-    display:block;
-
-    font-size:11px;
+    font-size:10px;
 
     color:#94a3b8;
 
-    margin-top:3px;
+    margin-top:4px;
 
 }
 
 .sidebar-search{
 
-    padding:18px 16px;
+    padding:18px 15px;
 
 }
 
-.sidebar-search-box{
-
-    position:relative;
-
-}
-
-.sidebar-search-box input{
+.sidebar-search input{
 
     width:100%;
 
@@ -355,64 +303,49 @@ a{
         rgba(255,255,255,.06);
 
     border:
-        1px solid rgba(255,255,255,.08);
+        1px solid
+        rgba(255,255,255,.08);
 
     color:white;
 
     border-radius:12px;
 
-    padding:
-        11px 12px 11px 38px;
+    padding:11px 13px;
 
     outline:none;
 
 }
 
-.sidebar-search-box input::placeholder{
+.sidebar-search input::placeholder{
 
-    color:#64748b;
-
-}
-
-.sidebar-search-box span{
-
-    position:absolute;
-
-    left:13px;
-
-    top:50%;
-
-    transform:
-        translateY(-50%);
+    color:#94a3b8;
 
 }
 
-.sidebar-title{
+.sidebar-label{
 
     padding:
-        6px 20px 10px;
+        0 18px 10px;
 
     color:#64748b;
 
     font-size:10px;
 
-    font-weight:800;
-
-    text-transform:uppercase;
+    font-weight:bold;
 
     letter-spacing:1px;
 
 }
 
-.category-menu{
+.categories{
 
     overflow-y:auto;
 
-    padding:0 12px 20px;
+    padding:0 10px;
 
 }
 
-.category-button{
+.category{
 
     width:100%;
 
@@ -420,11 +353,7 @@ a{
 
     background:transparent;
 
-    color:#94a3b8;
-
-    padding:11px 12px;
-
-    border-radius:10px;
+    color:#cbd5e1;
 
     display:flex;
 
@@ -432,27 +361,27 @@ a{
 
     gap:10px;
 
-    text-align:left;
+    padding:11px;
+
+    border-radius:10px;
 
     margin-bottom:3px;
 
-    transition:.2s;
+    text-align:left;
 
 }
 
-.category-button:hover{
+.category:hover{
 
     background:
         rgba(255,255,255,.06);
 
-    color:white;
-
 }
 
-.category-button.active{
+.category.active{
 
     background:
-        rgba(37,99,235,.18);
+        rgba(37,99,235,.2);
 
     color:#60a5fa;
 
@@ -462,104 +391,45 @@ a{
 
     margin-left:auto;
 
-    font-size:11px;
+    font-size:10px;
 
     background:
-        rgba(255,255,255,.06);
+        rgba(255,255,255,.07);
 
-    padding:2px 7px;
+    padding:3px 7px;
 
     border-radius:20px;
 
 }
 
-.sidebar-footer{
+.sidebar-bottom{
 
     margin-top:auto;
 
-    padding:15px;
+    padding:14px;
 
     border-top:
-        1px solid rgba(255,255,255,.08);
+        1px solid
+        rgba(255,255,255,.08);
 
 }
 
-.sidebar-footer button{
+.sidebar-bottom button{
 
     width:100%;
 
     border:0;
 
-    border-radius:10px;
-
     padding:11px;
+
+    border-radius:10px;
 
     background:
         rgba(255,255,255,.06);
 
-    color:#cbd5e1;
-
-    margin-top:7px;
-
-}
-
-.sidebar-footer button:hover{
-
-    background:
-        rgba(255,255,255,.1);
-
     color:white;
 
-}
-
-
-/* =====================================================
-   MOBILE SIDEBAR
-===================================================== */
-
-.sidebar-overlay{
-
-    position:fixed;
-
-    inset:0;
-
-    background:
-        rgba(0,0,0,.5);
-
-    z-index:999;
-
-    display:none;
-
-}
-
-.sidebar-overlay.show{
-
-    display:block;
-
-}
-
-.mobile-menu-button{
-
-    display:none;
-
-    width:42px;
-
-    height:42px;
-
-    border:
-        1px solid var(--border);
-
-    background:var(--card);
-
-    color:var(--text);
-
-    border-radius:12px;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:20px;
+    margin-top:7px;
 
 }
 
@@ -570,23 +440,28 @@ a{
 
 .main{
 
-    margin-left:280px;
-
-    width:
-        calc(100% - 280px);
+    margin-left:265px;
 
     min-height:100vh;
 
 }
 
-
-/* =====================================================
-   TOPBAR
-===================================================== */
-
 .topbar{
 
-    height:76px;
+    height:75px;
+
+    background:
+        var(--card);
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
 
     display:flex;
 
@@ -597,87 +472,51 @@ a{
     padding:
         0 30px;
 
-    background:var(--card);
+}
 
-    border-bottom:
-        1px solid var(--border);
+.top-title{
 
-    position:sticky;
+    font-size:19px;
 
-    top:0;
-
-    z-index:100;
+    font-weight:bold;
 
 }
 
-.topbar-left{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-}
-
-.page-title{
-
-    font-size:18px;
-
-    font-weight:800;
-
-}
-
-.page-subtitle{
+.top-subtitle{
 
     color:var(--muted);
 
     font-size:12px;
 
-    margin-top:2px;
+    margin-top:3px;
 
 }
 
-.topbar-actions{
+.top-actions{
 
     display:flex;
-
-    align-items:center;
 
     gap:8px;
 
 }
 
-.icon-button{
+.icon-btn{
 
     width:42px;
 
     height:42px;
 
     border:
-        1px solid var(--border);
+        1px solid
+        var(--border);
 
-    background:var(--card);
-
-    color:var(--text);
-
-    border-radius:12px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
-.icon-button:hover{
-
-    border-color:
-        var(--primary);
+    background:
+        var(--card);
 
     color:
-        var(--primary);
+        var(--text);
+
+    border-radius:12px;
 
 }
 
@@ -707,54 +546,34 @@ a{
         linear-gradient(
             135deg,
             #1d4ed8,
-            #2563eb 45%,
+            #2563eb,
             #7c3aed
         );
 
-    border-radius:24px;
+    color:white;
+
+    border-radius:23px;
 
     padding:34px;
 
-    color:white;
-
-    position:relative;
-
-    overflow:hidden;
+    margin-bottom:23px;
 
     box-shadow:
-        0 20px 45px rgba(37,99,235,.22);
-
-    margin-bottom:24px;
-
-}
-
-.hero-content{
-
-    position:relative;
-
-    z-index:2;
-
-    max-width:750px;
+        0 20px 40px
+        rgba(37,99,235,.2);
 
 }
 
 .hero-label{
 
-    display:inline-flex;
+    display:inline-block;
 
-    align-items:center;
-
-    gap:7px;
+    background:
+        rgba(255,255,255,.13);
 
     padding:7px 11px;
 
-    background:
-        rgba(255,255,255,.12);
-
-    border:
-        1px solid rgba(255,255,255,.16);
-
-    border-radius:30px;
+    border-radius:20px;
 
     font-size:11px;
 
@@ -762,17 +581,17 @@ a{
 
 }
 
-.hero h2{
+.hero h1{
 
     font-size:32px;
-
-    line-height:1.15;
 
     margin-bottom:12px;
 
 }
 
 .hero p{
+
+    max-width:750px;
 
     color:#dbeafe;
 
@@ -786,31 +605,33 @@ a{
 
     display:flex;
 
-    flex-wrap:wrap;
-
     gap:10px;
 
     margin-top:22px;
 
 }
 
-.hero-button{
+.hero-btn{
 
     border:0;
 
     padding:11px 16px;
 
-    border-radius:11px;
+    border-radius:10px;
 
-    background:white;
-
-    color:#1d4ed8;
-
-    font-weight:700;
+    font-weight:bold;
 
 }
 
-.hero-button.secondary{
+.hero-btn.primary{
+
+    color:#1d4ed8;
+
+    background:white;
+
+}
+
+.hero-btn.secondary{
 
     background:
         rgba(255,255,255,.12);
@@ -818,13 +639,14 @@ a{
     color:white;
 
     border:
-        1px solid rgba(255,255,255,.2);
+        1px solid
+        rgba(255,255,255,.2);
 
 }
 
 
 /* =====================================================
-   STATS
+   STAT
 ===================================================== */
 
 .stats{
@@ -840,15 +662,16 @@ a{
 
 }
 
-.stat-card{
+.stat{
 
-    background:var(--card);
+    background:
+        var(--card);
 
     border:
-        1px solid var(--border);
+        1px solid
+        var(--border);
 
-    border-radius:
-        var(--radius);
+    border-radius:18px;
 
     padding:20px;
 
@@ -859,7 +682,7 @@ a{
 
     align-items:center;
 
-    gap:15px;
+    gap:14px;
 
 }
 
@@ -877,38 +700,34 @@ a{
 
     justify-content:center;
 
-    font-size:21px;
+    font-size:22px;
 
-    background:
-        var(--light,#eff6ff);
-
-    color:
-        var(--icon,#2563eb);
+    background:#eff6ff;
 
 }
 
-.stat-value{
+.stat-number{
 
     font-size:23px;
 
-    font-weight:800;
+    font-weight:bold;
 
 }
 
 .stat-label{
 
-    font-size:12px;
-
     color:var(--muted);
+
+    font-size:12px;
 
 }
 
 
 /* =====================================================
-   SECTION
+   SECTION HEADER
 ===================================================== */
 
-.section-header{
+.section-head{
 
     display:flex;
 
@@ -918,27 +737,25 @@ a{
 
     margin-bottom:15px;
 
-    gap:15px;
-
 }
 
-.section-header h3{
+.section-head h2{
 
     font-size:19px;
 
 }
 
-.section-header p{
-
-    font-size:12px;
+.section-head p{
 
     color:var(--muted);
 
-    margin-top:3px;
+    font-size:12px;
+
+    margin-top:4px;
 
 }
 
-.add-button{
+.add-btn{
 
     border:0;
 
@@ -947,25 +764,11 @@ a{
 
     color:white;
 
-    padding:
-        11px 16px;
+    padding:11px 16px;
 
-    border-radius:11px;
+    border-radius:10px;
 
-    font-weight:700;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:7px;
-
-}
-
-.add-button:hover{
-
-    background:
-        var(--primary-dark);
+    font-weight:bold;
 
 }
 
@@ -974,48 +777,33 @@ a{
    SEARCH
 ===================================================== */
 
-.search-area{
-
-    display:flex;
-
-    gap:10px;
+.main-search{
 
     margin-bottom:20px;
 
 }
 
-.search-box{
-
-    position:relative;
-
-    flex:1;
-
-}
-
-.search-box input{
+.main-search input{
 
     width:100%;
 
+    padding:14px 16px;
+
     border:
-        1px solid var(--border);
-
-    background:var(--card);
-
-    color:var(--text);
+        1px solid
+        var(--border);
 
     border-radius:13px;
 
-    padding:
-        13px 14px 13px 42px;
+    background:
+        var(--card);
+
+    color:
+        var(--text);
 
     outline:none;
 
-}
-
-.search-box input:focus{
-
-    border-color:
-        var(--primary);
+    font-size:14px;
 
 }
 
@@ -1037,52 +825,47 @@ a{
 
 .material-card{
 
-    background:var(--card);
+    background:
+        var(--card);
 
     border:
-        1px solid var(--border);
+        1px solid
+        var(--border);
 
-    border-radius:
-        var(--radius);
+    border-radius:18px;
 
     padding:20px;
 
     box-shadow:
         var(--shadow);
 
-    position:relative;
-
-    overflow:hidden;
-
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease;
+    transition:.2s;
 
 }
 
 .material-card:hover{
 
     transform:
-        translateY(-5px);
+        translateY(-4px);
 
-    box-shadow:
-        0 18px 40px rgba(15,23,42,.12);
+    border-color:
+        #93c5fd;
 
 }
 
-.material-top{
+.card-top{
 
     display:flex;
 
     justify-content:space-between;
 
-    align-items:flex-start;
+    align-items:center;
 
     margin-bottom:15px;
 
 }
 
-.material-icon{
+.card-icon{
 
     width:44px;
 
@@ -1096,74 +879,51 @@ a{
 
     justify-content:center;
 
-    background:
-        #eff6ff;
-
-    color:
-        var(--primary);
+    background:#eff6ff;
 
     font-size:20px;
 
 }
 
-body.dark .material-icon{
-
-    background:
-        rgba(37,99,235,.14);
-
-}
-
-.material-id{
-
-    font-size:10px;
+.card-id{
 
     color:var(--muted);
 
-    font-weight:700;
+    font-size:10px;
+
+    font-weight:bold;
 
 }
 
-.material-category{
+.card-category{
 
-    display:inline-flex;
+    display:inline-block;
 
-    padding:
-        5px 9px;
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    padding:5px 9px;
 
     border-radius:20px;
 
     font-size:10px;
 
-    font-weight:700;
+    font-weight:bold;
 
-    background:
-        #eff6ff;
+    margin-bottom:10px;
 
-    color:
-        #2563eb;
+}
+
+.material-card h3{
+
+    font-size:17px;
 
     margin-bottom:9px;
 
 }
 
-body.dark .material-category{
-
-    background:
-        rgba(37,99,235,.15);
-
-}
-
-.material-card h4{
-
-    font-size:17px;
-
-    line-height:1.35;
-
-    margin-bottom:8px;
-
-}
-
-.material-card p{
+.card-summary{
 
     color:var(--muted);
 
@@ -1173,51 +933,27 @@ body.dark .material-category{
 
     min-height:58px;
 
-    display:
-        -webkit-box;
-
-    -webkit-line-clamp:3;
-
-    -webkit-box-orient:vertical;
-
-    overflow:hidden;
-
 }
 
+.card-footer{
 
-/* =====================================================
-   FIX UTAMA:
-   ACTION AREA + TOMBOL BUKA
-===================================================== */
+    border-top:
+        1px solid
+        var(--border);
 
-.material-footer{
+    margin-top:17px;
+
+    padding-top:13px;
 
     display:flex;
 
-    justify-content:space-between;
-
     align-items:center;
 
-    gap:10px;
-
-    margin-top:18px;
-
-    padding-top:14px;
-
-    border-top:
-        1px solid var(--border);
+    justify-content:space-between;
 
 }
 
-.material-status{
-
-    color:var(--muted);
-
-    font-size:11px;
-
-}
-
-.open-material-button{
+.card-open{
 
     border:0;
 
@@ -1226,51 +962,28 @@ body.dark .material-category{
 
     color:white;
 
-    padding:
-        9px 13px;
+    padding:9px 14px;
 
     border-radius:9px;
 
     font-size:11px;
 
-    font-weight:800;
-
-    transition:.2s;
-
-    white-space:nowrap;
+    font-weight:bold;
 
 }
 
-.open-material-button:hover{
+.card-open:hover{
 
     background:
         var(--primary-dark);
 
-    transform:
-        translateY(-1px);
-
 }
 
-
-/* =====================================================
-   EMPTY
-===================================================== */
-
-.empty-state{
-
-    background:var(--card);
-
-    border:
-        1px dashed var(--border);
-
-    border-radius:
-        var(--radius);
-
-    padding:55px 20px;
-
-    text-align:center;
+.opened{
 
     color:var(--muted);
+
+    font-size:11px;
 
 }
 
@@ -1279,111 +992,78 @@ body.dark .material-category{
    DETAIL PAGE
 ===================================================== */
 
-.detail-page{
-
-    display:none;
-
-}
-
-.detail-page.active{
+.dashboard{
 
     display:block;
 
 }
 
-.dashboard-page.hidden{
+.dashboard.hidden{
 
     display:none;
 
 }
 
-.back-button{
+.detail{
 
-    border:
-        1px solid var(--border);
-
-    background:var(--card);
-
-    color:var(--text);
-
-    border-radius:11px;
-
-    padding:
-        10px 14px;
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:7px;
-
-    margin-bottom:20px;
+    display:none;
 
 }
 
-.back-button:hover{
+.detail.show{
 
-    border-color:
-        var(--primary);
-
-    color:
-        var(--primary);
+    display:block;
 
 }
 
-.detail-hero{
 
-    background:var(--card);
+/* =====================================================
+   DETAIL HEADER
+===================================================== */
+
+.detail-header{
+
+    background:
+        var(--card);
 
     border:
-        1px solid var(--border);
+        1px solid
+        var(--border);
 
-    border-radius:22px;
+    border-radius:20px;
 
     padding:30px;
 
+    margin-bottom:20px;
+
     box-shadow:
         var(--shadow);
-
-    margin-bottom:20px;
 
 }
 
 .detail-category{
 
-    display:inline-flex;
+    display:inline-block;
 
-    padding:
-        6px 10px;
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    padding:6px 10px;
 
     border-radius:20px;
 
-    background:
-        #eff6ff;
-
-    color:
-        #2563eb;
-
     font-size:11px;
 
-    font-weight:800;
+    font-weight:bold;
 
     margin-bottom:12px;
 
 }
 
-body.dark .detail-category{
+.detail-header h1{
 
-    background:
-        rgba(37,99,235,.15);
-
-}
-
-.detail-hero h2{
-
-    font-size:31px;
-
-    line-height:1.2;
+    font-size:30px;
 
     margin-bottom:10px;
 
@@ -1403,13 +1083,13 @@ body.dark .detail-category{
 
     grid-template-columns:
         minmax(0,1fr)
-        300px;
+        290px;
 
     gap:20px;
 
 }
 
-.detail-content{
+.detail-sections{
 
     display:flex;
 
@@ -1419,15 +1099,16 @@ body.dark .detail-category{
 
 }
 
-.detail-section{
+.detail-box{
 
-    background:var(--card);
+    background:
+        var(--card);
 
     border:
-        1px solid var(--border);
+        1px solid
+        var(--border);
 
-    border-radius:
-        var(--radius);
+    border-radius:17px;
 
     padding:23px;
 
@@ -1436,7 +1117,7 @@ body.dark .detail-category{
 
 }
 
-.detail-section-title{
+.detail-title{
 
     display:flex;
 
@@ -1444,21 +1125,23 @@ body.dark .detail-category{
 
     gap:9px;
 
-    margin-bottom:13px;
-
     font-size:17px;
 
-    font-weight:800;
+    font-weight:bold;
+
+    margin-bottom:14px;
 
 }
 
-.detail-section-title span{
+.detail-title-icon{
 
-    width:32px;
+    width:33px;
 
-    height:32px;
+    height:33px;
 
     border-radius:9px;
+
+    background:#eff6ff;
 
     display:flex;
 
@@ -1466,67 +1149,56 @@ body.dark .detail-category{
 
     justify-content:center;
 
-    background:
-        #eff6ff;
-
-    color:
-        var(--primary);
-
 }
 
 .detail-text{
 
-    color:var(--text);
-
-    line-height:1.8;
-
     font-size:14px;
+
+    line-height:1.85;
 
     white-space:pre-line;
 
-}
-
-.detail-text a{
-
-    color:
-        var(--primary);
-
-    text-decoration:underline;
+    color:var(--text);
 
 }
 
-.detail-sidebar{
+
+/* =====================================================
+   DETAIL SIDEBAR
+===================================================== */
+
+.detail-side{
 
     position:sticky;
 
-    top:96px;
+    top:95px;
 
-    display:flex;
-
-    flex-direction:column;
-
-    gap:14px;
+    height:max-content;
 
 }
 
-.info-card{
+.info{
 
-    background:var(--card);
+    background:
+        var(--card);
 
     border:
-        1px solid var(--border);
+        1px solid
+        var(--border);
 
-    border-radius:
-        var(--radius);
+    border-radius:17px;
 
     padding:18px;
 
     box-shadow:
         var(--shadow);
 
+    margin-bottom:15px;
+
 }
 
-.info-card h4{
+.info h3{
 
     font-size:14px;
 
@@ -1534,13 +1206,7 @@ body.dark .detail-category{
 
 }
 
-.info-item{
-
-    padding:
-        10px 0;
-
-    border-bottom:
-        1px solid var(--border);
+.info-row{
 
     display:flex;
 
@@ -1548,27 +1214,247 @@ body.dark .detail-category{
 
     gap:10px;
 
+    padding:10px 0;
+
+    border-bottom:
+        1px solid
+        var(--border);
+
     font-size:12px;
 
 }
 
-.info-item:last-child{
+.info-row:last-child{
 
     border-bottom:0;
 
 }
 
-.info-item span:first-child{
+.info-row span:first-child{
 
     color:var(--muted);
 
 }
 
-.info-item span:last-child{
+.info-row span:last-child{
 
-    font-weight:700;
+    font-weight:bold;
 
-    text-align:right;
+}
+
+
+/* =====================================================
+   NEW:
+   LEARNING NAVIGATION
+===================================================== */
+
+.learning-navigation{
+
+    margin-top:30px;
+
+    background:
+        var(--card);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+.learning-navigation-header{
+
+    margin-bottom:17px;
+
+}
+
+.learning-navigation-header h2{
+
+    font-size:18px;
+
+    margin-bottom:5px;
+
+}
+
+.learning-navigation-header p{
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    line-height:1.6;
+
+}
+
+
+/* DROPDOWN */
+
+.material-select{
+
+    width:100%;
+
+    padding:14px 15px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:12px;
+
+    background:
+        var(--card);
+
+    color:
+        var(--text);
+
+    outline:none;
+
+    font-size:14px;
+
+    margin-bottom:17px;
+
+}
+
+.material-select:focus{
+
+    border-color:
+        var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37,99,235,.1);
+
+}
+
+
+/* PREVIOUS NEXT */
+
+.learning-buttons{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:12px;
+
+}
+
+.learning-nav-button{
+
+    border:
+        1px solid
+        var(--border);
+
+    background:
+        var(--card);
+
+    color:
+        var(--text);
+
+    border-radius:12px;
+
+    padding:13px 15px;
+
+    text-align:left;
+
+    transition:.2s;
+
+}
+
+.learning-nav-button:hover{
+
+    border-color:
+        var(--primary);
+
+    color:
+        var(--primary);
+
+}
+
+.learning-nav-button small{
+
+    display:block;
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    margin-bottom:5px;
+
+}
+
+.learning-nav-button strong{
+
+    font-size:12px;
+
+}
+
+
+/* BACK BUTTON DI BAWAH */
+
+.bottom-back{
+
+    width:100%;
+
+    margin-top:12px;
+
+    border:0;
+
+    background:
+        var(--primary);
+
+    color:white;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    transition:.2s;
+
+}
+
+.bottom-back:hover{
+
+    background:
+        var(--primary-dark);
+
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.empty{
+
+    grid-column:
+        1 / -1;
+
+    background:
+        var(--card);
+
+    border:
+        1px dashed
+        var(--border);
+
+    border-radius:18px;
+
+    text-align:center;
+
+    padding:50px;
+
+    color:var(--muted);
 
 }
 
@@ -1584,10 +1470,7 @@ body.dark .detail-category{
     inset:0;
 
     background:
-        rgba(2,6,23,.62);
-
-    backdrop-filter:
-        blur(5px);
+        rgba(0,0,0,.6);
 
     z-index:5000;
 
@@ -1610,7 +1493,7 @@ body.dark .detail-category{
 .modal-box{
 
     width:
-        min(760px,100%);
+        min(750px,100%);
 
     max-height:
         calc(100vh - 40px);
@@ -1620,32 +1503,25 @@ body.dark .detail-category{
     background:
         var(--card);
 
-    border-radius:
-        22px;
+    border-radius:20px;
 
 }
 
-.modal-header{
+.modal-head{
 
-    padding:
-        20px 22px;
+    padding:20px;
 
     border-bottom:
-        1px solid var(--border);
+        1px solid
+        var(--border);
 
     display:flex;
-
-    align-items:center;
 
     justify-content:space-between;
 
 }
 
-.close-button{
-
-    width:36px;
-
-    height:36px;
+.close{
 
     border:0;
 
@@ -1655,15 +1531,17 @@ body.dark .detail-category{
     color:
         var(--text);
 
-    border-radius:10px;
+    width:35px;
 
-    font-size:18px;
+    height:35px;
+
+    border-radius:9px;
 
 }
 
-.modal-body{
+.form{
 
-    padding:22px;
+    padding:20px;
 
 }
 
@@ -1678,16 +1556,16 @@ body.dark .detail-category{
 
 }
 
-.form-group{
-
-    margin-bottom:15px;
-
-}
-
 .form-group.full{
 
     grid-column:
         1 / -1;
+
+}
+
+.form-group{
+
+    margin-bottom:14px;
 
 }
 
@@ -1697,9 +1575,9 @@ body.dark .detail-category{
 
     font-size:12px;
 
-    font-weight:800;
+    font-weight:bold;
 
-    margin-bottom:7px;
+    margin-bottom:6px;
 
 }
 
@@ -1709,8 +1587,13 @@ body.dark .detail-category{
 
     width:100%;
 
+    padding:11px;
+
     border:
-        1px solid var(--border);
+        1px solid
+        var(--border);
+
+    border-radius:10px;
 
     background:
         var(--card);
@@ -1718,30 +1601,25 @@ body.dark .detail-category{
     color:
         var(--text);
 
-    border-radius:11px;
-
-    padding:
-        11px 12px;
-
     outline:none;
-
-    resize:vertical;
 
 }
 
 .form-group textarea{
 
-    min-height:105px;
+    min-height:110px;
+
+    resize:vertical;
 
 }
 
 .modal-footer{
 
-    padding:
-        16px 22px;
+    padding:15px 20px;
 
     border-top:
-        1px solid var(--border);
+        1px solid
+        var(--border);
 
     display:flex;
 
@@ -1751,10 +1629,11 @@ body.dark .detail-category{
 
 }
 
-.cancel-button{
+.cancel{
 
     border:
-        1px solid var(--border);
+        1px solid
+        var(--border);
 
     background:
         var(--card);
@@ -1762,16 +1641,13 @@ body.dark .detail-category{
     color:
         var(--text);
 
-    border-radius:11px;
+    padding:10px 15px;
 
-    padding:
-        11px 16px;
-
-    font-weight:700;
+    border-radius:10px;
 
 }
 
-.save-button{
+.save{
 
     border:0;
 
@@ -1780,12 +1656,9 @@ body.dark .detail-category{
 
     color:white;
 
-    border-radius:11px;
+    padding:10px 15px;
 
-    padding:
-        11px 18px;
-
-    font-weight:700;
+    border-radius:10px;
 
 }
 
@@ -1794,7 +1667,7 @@ body.dark .detail-category{
    TOAST
 ===================================================== */
 
-.toast-container{
+.toast{
 
     position:fixed;
 
@@ -1802,75 +1675,40 @@ body.dark .detail-category{
 
     bottom:20px;
 
-    z-index:9000;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:9px;
-
-    width:
-        min(380px,calc(100vw - 40px));
-
-}
-
-.toast{
-
     background:
         var(--card);
 
+    color:
+        var(--text);
+
     border:
-        1px solid var(--border);
-
-    border-left:
-        4px solid var(--primary);
-
-    border-radius:13px;
-
-    padding:14px 15px;
+        1px solid
+        var(--border);
 
     box-shadow:
-        0 15px 40px rgba(0,0,0,.15);
+        0 15px 40px
+        rgba(0,0,0,.2);
 
-}
+    padding:15px 18px;
 
-.toast.success{
+    border-radius:12px;
 
-    border-left-color:
-        var(--success);
-
-}
-
-.toast.error{
-
-    border-left-color:
-        var(--danger);
-
-}
-
-.toast-title{
-
-    font-weight:800;
+    z-index:9999;
 
     font-size:13px;
-
-    margin-bottom:3px;
-
-}
-
-.toast-message{
-
-    color:var(--muted);
-
-    font-size:12px;
 
 }
 
 
 /* =====================================================
-   RESPONSIVE
+   MOBILE
 ===================================================== */
+
+.mobile-menu{
+
+    display:none;
+
+}
 
 @media(max-width:1200px){
 
@@ -1888,23 +1726,6 @@ body.dark .detail-category{
 
     }
 
-    .detail-layout{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .detail-sidebar{
-
-        position:static;
-
-        display:grid;
-
-        grid-template-columns:
-            repeat(2,1fr);
-
-    }
-
 }
 
 @media(max-width:900px){
@@ -1913,6 +1734,8 @@ body.dark .detail-category{
 
         transform:
             translateX(-100%);
+
+        transition:.3s;
 
     }
 
@@ -1927,13 +1750,27 @@ body.dark .detail-category{
 
         margin-left:0;
 
-        width:100%;
-
     }
 
-    .mobile-menu-button{
+    .mobile-menu{
 
-        display:flex;
+        display:block;
+
+        width:40px;
+
+        height:40px;
+
+        border:
+            1px solid
+            var(--border);
+
+        background:
+            var(--card);
+
+        color:
+            var(--text);
+
+        border-radius:10px;
 
     }
 
@@ -1950,19 +1787,25 @@ body.dark .detail-category{
 
     }
 
-}
+    .detail-layout{
 
-@media(max-width:700px){
-
-    .hero{
-
-        padding:25px 20px;
+        grid-template-columns:1fr;
 
     }
 
-    .hero h2{
+    .detail-side{
 
-        font-size:25px;
+        position:static;
+
+    }
+
+}
+
+@media(max-width:650px){
+
+    .material-grid{
+
+        grid-template-columns:1fr;
 
     }
 
@@ -1973,21 +1816,23 @@ body.dark .detail-category{
 
     }
 
-    .material-grid{
+    .hero h1{
 
-        grid-template-columns:1fr;
+        font-size:25px;
 
     }
 
-    .section-header{
+    .section-head{
+
+        flex-direction:column;
 
         align-items:flex-start;
 
     }
 
-    .detail-sidebar{
+    .add-btn{
 
-        grid-template-columns:1fr;
+        width:100%;
 
     }
 
@@ -2003,15 +1848,15 @@ body.dark .detail-category{
 
     }
 
-}
+    .learning-buttons{
 
-@media(max-width:480px){
-
-    .content{
-
-        padding:15px;
+        grid-template-columns:1fr;
 
     }
+
+}
+
+@media(max-width:450px){
 
     .stats{
 
@@ -2019,42 +1864,15 @@ body.dark .detail-category{
 
     }
 
-    .hero-buttons{
+    .content{
 
-        flex-direction:column;
-
-    }
-
-    .hero-button{
-
-        width:100%;
+        padding:14px;
 
     }
 
-    .section-header{
+    .hero{
 
-        flex-direction:column;
-
-    }
-
-    .add-button{
-
-        width:100%;
-
-        justify-content:center;
-
-    }
-
-    .material-footer{
-
-        align-items:center;
-
-    }
-
-    .open-material-button{
-
-        padding:
-            9px 10px;
+        padding:24px 18px;
 
     }
 
@@ -2073,15 +1891,14 @@ body.dark .detail-category{
 ===================================================== -->
 
 <div
-    class="loading-screen"
-    id="loadingScreen"
->
+class="loading"
+id="loading">
 
-    <div class="loader-logo">
+    <div class="loading-logo">
         📚
     </div>
 
-    <div class="loader-spinner"></div>
+    <div class="spinner"></div>
 
     <div>
         Memuat Learning Center...
@@ -2090,94 +1907,78 @@ body.dark .detail-category{
 </div>
 
 
-<div
-    class="sidebar-overlay"
-    id="sidebarOverlay"
-    onclick="closeSidebar()"
-></div>
-
-
-<div class="app">
-
-
 <!-- =====================================================
      SIDEBAR
 ===================================================== -->
 
 <aside
-    class="sidebar"
-    id="sidebar"
->
+class="sidebar"
+id="sidebar">
 
-    <div class="sidebar-header">
 
-        <div class="brand">
+<div class="logo-area">
 
-            <div class="brand-icon">
-                📚
+    <div class="logo">
+
+        <div class="logo-icon">
+            📚
+        </div>
+
+        <div>
+
+            <div class="logo-title">
+                MY LEARNING
             </div>
 
-            <div class="brand-text">
-
-                <h1>
-                    MY LEARNING
-                </h1>
-
-                <span>
-                    Restaurant Operational Library
-                </span>
-
+            <div class="logo-subtitle">
+                Restaurant Operational Library
             </div>
 
         </div>
 
     </div>
 
-
-    <div class="sidebar-search">
-
-        <div class="sidebar-search-box">
-
-            <span>🔍</span>
-
-            <input
-                type="text"
-                id="sidebarSearch"
-                placeholder="Cari materi..."
-                oninput="handleSearch(this.value)"
-            >
-
-        </div>
-
-    </div>
+</div>
 
 
-    <div class="sidebar-title">
-        KATEGORI
-    </div>
+<div class="sidebar-search">
+
+    <input
+        id="sidebarSearch"
+        type="text"
+        placeholder="🔍 Cari materi..."
+        oninput="searchMaterial(this.value)"
+    >
+
+</div>
 
 
-    <div
-        class="category-menu"
-        id="categoryMenu"
-    ></div>
+<div class="sidebar-label">
+    KATEGORI
+</div>
 
 
-    <div class="sidebar-footer">
+<div
+class="categories"
+id="categories">
+</div>
 
-        <button
-            onclick="openAddMaterialModal()"
-        >
-            ➕ Tambah Materi
-        </button>
 
-        <button
-            onclick="toggleTheme()"
-        >
-            🌙 Mode Tampilan
-        </button>
+<div class="sidebar-bottom">
 
-    </div>
+    <button
+        onclick="openAddModal()"
+    >
+        ＋ &nbsp; Tambah Materi
+    </button>
+
+    <button
+        onclick="toggleDark()"
+    >
+        🌙 &nbsp; Mode Tampilan
+    </button>
+
+</div>
 
 </aside>
 
@@ -2191,55 +1992,61 @@ body.dark .detail-category{
 
 <header class="topbar">
 
-    <div class="topbar-left">
 
-        <button
-            class="mobile-menu-button"
-            onclick="toggleSidebar()"
-        >
-            ☰
-        </button>
-
-        <div>
-
-            <div
-                class="page-title"
-                id="pageTitle"
-            >
-                Dashboard
-            </div>
-
-            <div
-                class="page-subtitle"
-                id="pageSubtitle"
-            >
-                Pusat belajar operasional restoran
-            </div>
-
-        </div>
-
-    </div>
+<div
+style="
+display:flex;
+align-items:center;
+gap:10px;
+">
 
 
-    <div class="topbar-actions">
+<button
+class="mobile-menu"
+onclick="toggleSidebar()"
+>
+☰
+</button>
 
-        <button
-            class="icon-button"
-            onclick="loadData()"
-            title="Refresh"
-        >
-            🔄
-        </button>
 
-        <button
-            class="icon-button"
-            onclick="toggleTheme()"
-            title="Dark Mode"
-        >
-            🌓
-        </button>
+<div>
 
-    </div>
+<div
+class="top-title"
+id="topTitle">
+Dashboard
+</div>
+
+<div
+class="top-subtitle"
+id="topSubtitle">
+Pusat belajar operasional restoran
+</div>
+
+</div>
+
+</div>
+
+
+<div class="top-actions">
+
+<button
+class="icon-btn"
+onclick="loadMaterials()"
+title="Refresh"
+>
+🔄
+</button>
+
+<button
+class="icon-btn"
+onclick="toggleDark()"
+title="Dark Mode"
+>
+🌓
+</button>
+
+</div>
 
 </header>
 
@@ -2252,50 +2059,44 @@ body.dark .detail-category{
 ===================================================== -->
 
 <section
-    class="dashboard-page"
-    id="dashboardPage"
->
+class="dashboard"
+id="dashboard">
 
 
 <div class="hero">
 
-    <div class="hero-content">
+<div class="hero-label">
+📖 PERSONAL LEARNING CENTER
+</div>
 
-        <div class="hero-label">
-            📖 PERSONAL LEARNING CENTER
-        </div>
+<h1>
+Belajar Operasional Restoran
+Lebih Terstruktur
+</h1>
 
-        <h2>
-            Belajar Operasional Restoran
-            Lebih Terstruktur
-        </h2>
+<p>
+Tempat belajar dan menyimpan pengetahuan
+mengenai berbagai indikator, sistem,
+analisa dan proses operasional restoran.
+</p>
 
-        <p>
-            Tempat menyimpan, memahami dan
-            mengembangkan materi pembelajaran
-            operasional restoran berdasarkan
-            pengalaman dan proses kerja.
-        </p>
+<div class="hero-buttons">
 
-        <div class="hero-buttons">
+<button
+class="hero-btn primary"
+onclick="focusSearch()"
+>
+🔍 Cari Materi
+</button>
 
-            <button
-                class="hero-button"
-                onclick="focusSearch()"
-            >
-                🔍 Cari Materi
-            </button>
+<button
+class="hero-btn secondary"
+onclick="openAddModal()"
+>
+＋ Tambah Materi
+</button>
 
-            <button
-                class="hero-button secondary"
-                onclick="openAddMaterialModal()"
-            >
-                ＋ Tambah Materi
-            </button>
-
-        </div>
-
-    </div>
+</div>
 
 </div>
 
@@ -2304,171 +2105,151 @@ body.dark .detail-category{
 
 <div class="stats">
 
-    <div class="stat-card">
 
-        <div
-            class="stat-icon"
-            style="
-                --light:#eff6ff;
-                --icon:#2563eb;
-            "
-        >
-            📚
-        </div>
+<div class="stat">
 
-        <div>
+<div
+class="stat-icon"
+style="background:#eff6ff"
+>
+📚
+</div>
 
-            <div
-                class="stat-value"
-                id="totalMaterials"
-            >
-                0
-            </div>
+<div>
 
-            <div class="stat-label">
-                Total Materi
-            </div>
+<div
+class="stat-number"
+id="totalMaterials">
+0
+</div>
 
-        </div>
+<div class="stat-label">
+Total Materi
+</div>
 
-    </div>
-
-
-    <div class="stat-card">
-
-        <div
-            class="stat-icon"
-            style="
-                --light:#f5f3ff;
-                --icon:#7c3aed;
-            "
-        >
-            🗂️
-        </div>
-
-        <div>
-
-            <div
-                class="stat-value"
-                id="totalCategories"
-            >
-                0
-            </div>
-
-            <div class="stat-label">
-                Kategori
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="stat-card">
-
-        <div
-            class="stat-icon"
-            style="
-                --light:#f0fdf4;
-                --icon:#16a34a;
-            "
-        >
-            ✅
-        </div>
-
-        <div>
-
-            <div
-                class="stat-value"
-                id="activeMaterials"
-            >
-                0
-            </div>
-
-            <div class="stat-label">
-                Materi Aktif
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="stat-card">
-
-        <div
-            class="stat-icon"
-            style="
-                --light:#fffbeb;
-                --icon:#f59e0b;
-            "
-        >
-            🧠
-        </div>
-
-        <div>
-
-            <div
-                class="stat-value"
-                id="learningCount"
-            >
-                0
-            </div>
-
-            <div class="stat-label">
-                Sudah Dibuka
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </div>
 
 
-<!-- MATERIAL HEADER -->
+<div class="stat">
 
-<div class="section-header">
+<div
+class="stat-icon"
+style="background:#f5f3ff"
+>
+📁
+</div>
 
-    <div>
+<div>
 
-        <h3>
-            📚 Materi Pembelajaran
-        </h3>
+<div
+class="stat-number"
+id="totalCategories">
+0
+</div>
 
-        <p>
-            Pilih materi untuk membaca
-            penjelasan lengkap.
-        </p>
+<div class="stat-label">
+Kategori
+</div>
 
-    </div>
+</div>
 
-    <button
-        class="add-button"
-        onclick="openAddMaterialModal()"
-    >
-        ＋ Tambah Materi
-    </button>
+</div>
+
+
+<div class="stat">
+
+<div
+class="stat-icon"
+style="background:#f0fdf4"
+>
+✅
+</div>
+
+<div>
+
+<div
+class="stat-number"
+id="totalActive">
+0
+</div>
+
+<div class="stat-label">
+Materi Aktif
+</div>
+
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div
+class="stat-icon"
+style="background:#fffbeb"
+>
+🧠
+</div>
+
+<div>
+
+<div
+class="stat-number"
+id="totalOpened">
+0
+</div>
+
+<div class="stat-label">
+Sudah Dibuka
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- HEADER -->
+
+<div class="section-head">
+
+<div>
+
+<h2>
+📚 Materi Pembelajaran
+</h2>
+
+<p>
+Pilih materi untuk membaca penjelasan lengkap.
+</p>
+
+</div>
+
+
+<button
+class="add-btn"
+onclick="openAddModal()"
+>
+＋ Tambah Materi
+</button>
 
 </div>
 
 
 <!-- SEARCH -->
 
-<div class="search-area">
+<div class="main-search">
 
-    <div class="search-box">
-
-        <span>🔍</span>
-
-        <input
-            type="text"
-            id="mainSearch"
-            placeholder="Cari judul, kategori atau isi materi..."
-            oninput="handleSearch(this.value)"
-        >
-
-    </div>
+<input
+id="mainSearch"
+type="text"
+placeholder="🔍 Cari judul, kategori atau isi materi..."
+oninput="searchMaterial(this.value)"
+>
 
 </div>
 
@@ -2476,21 +2257,8 @@ body.dark .detail-category{
 <!-- MATERIAL -->
 
 <div
-    class="material-grid"
-    id="materialGrid"
-></div>
-
-
-<div class="footer">
-
-    MY LEARNING CENTER
-    •
-    Restaurant Operational Library
-
-    <br>
-
-    V1 • Google Spreadsheet Database
-
+class="material-grid"
+id="materialGrid">
 </div>
 
 
@@ -2502,38 +2270,143 @@ body.dark .detail-category{
 ===================================================== -->
 
 <section
-    class="detail-page"
-    id="detailPage"
+class="detail"
+id="detail">
+
+
+<!--
+    TOMBOL BACK ATAS SUDAH DIHAPUS
+    SESUAI PERMINTAAN.
+-->
+
+
+<div
+class="detail-header"
+id="detailHeader">
+</div>
+
+
+<div class="detail-layout">
+
+
+<div
+class="detail-sections"
+id="detailSections">
+</div>
+
+
+<div
+class="detail-side"
+id="detailSide">
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     LEARNING NAVIGATION
+     ADA DI PALING BAWAH MATERI
+===================================================== -->
+
+<div
+class="learning-navigation"
+id="learningNavigation">
+
+
+<div class="learning-navigation-header">
+
+<h2>
+🧭 Lanjut Belajar
+</h2>
+
+<p>
+Setelah selesai membaca materi ini,
+kamu dapat memilih materi lain tanpa
+harus kembali ke halaman utama.
+</p>
+
+</div>
+
+
+<!-- DROPDOWN -->
+
+<select
+class="material-select"
+id="nextMaterialSelect"
+onchange="changeMaterialFromDropdown(this.value)"
 >
 
-    <button
-        class="back-button"
-        onclick="backToDashboard()"
-    >
-        ← Kembali ke Materi
-    </button>
+<option value="">
+📚 Pilih materi lain...
+</option>
+
+</select>
 
 
-    <div
-        class="detail-hero"
-        id="detailHero"
-    ></div>
+<!-- PREVIOUS / NEXT -->
+
+<div class="learning-buttons">
 
 
-    <div class="detail-layout">
+<button
+type="button"
+class="learning-nav-button"
+id="previousMaterialButton"
+onclick="openPreviousMaterial()"
+>
 
-        <div
-            class="detail-content"
-            id="detailContent"
-        ></div>
+<small>
+← MATERI SEBELUMNYA
+</small>
+
+<strong
+id="previousMaterialText"
+>
+Tidak ada
+</strong>
+
+</button>
 
 
-        <aside
-            class="detail-sidebar"
-            id="detailSidebar"
-        ></aside>
+<button
+type="button"
+class="learning-nav-button"
+id="nextMaterialButton"
+onclick="openNextMaterial()"
+>
 
-    </div>
+<small>
+MATERI BERIKUTNYA →
+</small>
+
+<strong
+id="nextMaterialText"
+>
+Tidak ada
+</strong>
+
+</button>
+
+
+</div>
+
+
+<!-- BACK PALING BAWAH -->
+
+<button
+type="button"
+class="bottom-back"
+onclick="backDashboard()"
+>
+
+← Kembali ke Semua Materi
+
+</button>
+
+
+</div>
+
 
 </section>
 
@@ -2542,59 +2415,58 @@ body.dark .detail-category{
 
 </main>
 
-</div>
-
 
 <!-- =====================================================
-     ADD MATERIAL MODAL
+     ADD MODAL
 ===================================================== -->
 
 <div
-    class="modal"
-    id="addMaterialModal"
->
+class="modal"
+id="addModal">
+
 
 <div class="modal-box">
 
 
-<div class="modal-header">
+<div class="modal-head">
 
-    <h3>
-        ➕ Tambah Materi Baru
-    </h3>
+<h3>
+➕ Tambah Materi Baru
+</h3>
 
-    <button
-        class="close-button"
-        onclick="closeAddMaterialModal()"
-    >
-        ×
-    </button>
+<button
+class="close"
+onclick="closeAddModal()"
+>
+×
+</button>
 
 </div>
 
 
 <form
-    id="materialForm"
-    onsubmit="submitMaterial(event)"
+id="materialForm"
+onsubmit="saveMaterial(event)"
 >
 
 
-<div class="modal-body">
+<div class="form">
+
 
 <div class="form-grid">
 
 
-<div class="form-group full">
+<div
+class="form-group full">
 
 <label>
-    Judul Materi *
+Judul Materi *
 </label>
 
 <input
-    type="text"
-    id="formJudul"
-    required
-    placeholder="Contoh: Forecasting"
+id="fJudul"
+required
+placeholder="Contoh: Forecasting"
 >
 
 </div>
@@ -2603,16 +2475,16 @@ body.dark .detail-category{
 <div class="form-group">
 
 <label>
-    Kategori *
+Kategori *
 </label>
 
 <select
-    id="formKategori"
-    required
+id="fKategori"
+required
 >
 
 <option value="">
-    Pilih kategori
+Pilih kategori
 </option>
 
 </select>
@@ -2623,112 +2495,117 @@ body.dark .detail-category{
 <div class="form-group">
 
 <label>
-    Ringkasan
+Ringkasan
 </label>
 
 <input
-    type="text"
-    id="formRingkasan"
-    placeholder="Ringkasan singkat materi"
+id="fRingkasan"
+placeholder="Ringkasan singkat"
 >
 
 </div>
 
 
-<div class="form-group full">
+<div
+class="form-group full">
 
 <label>
-    Pengertian
+Pengertian
 </label>
 
 <textarea
-    id="formPengertian"
-    placeholder="Jelaskan pengertian materi..."
+id="fPengertian"
+placeholder="Jelaskan pengertian..."
 ></textarea>
 
 </div>
 
 
-<div class="form-group full">
+<div
+class="form-group full">
 
 <label>
-    Materi Lengkap
+Materi Lengkap
 </label>
 
 <textarea
-    id="formMateri"
-    style="min-height:180px"
-    placeholder="Tuliskan materi secara detail..."
+id="fMateri"
+placeholder="Tuliskan materi secara detail..."
 ></textarea>
 
 </div>
 
 
-<div class="form-group full">
+<div
+class="form-group full">
 
 <label>
-    Contoh
+Contoh
 </label>
 
 <textarea
-    id="formContoh"
-    placeholder="Tuliskan contoh penerapan..."
+id="fContoh"
+placeholder="Tuliskan contoh..."
 ></textarea>
 
 </div>
 
 
-<div class="form-group full">
+<div
+class="form-group full">
 
 <label>
-    Analisa
+Analisa
 </label>
 
 <textarea
-    id="formAnalisa"
-    placeholder="Bagaimana cara menganalisa materi ini?"
+id="fAnalisa"
+placeholder="Tuliskan analisa..."
 ></textarea>
 
 </div>
 
 
-<div class="form-group full">
+<div
+class="form-group full">
 
 <label>
-    Dampak
+Dampak
 </label>
 
 <textarea
-    id="formDampak"
-    placeholder="Apa dampak atau pengaruhnya?"
+id="fDampak"
+placeholder="Tuliskan dampak..."
 ></textarea>
 
 </div>
 
 
-<div class="form-group full">
+<div
+class="form-group full">
 
 <label>
-    Kesalahan Umum
+Kesalahan Umum
 </label>
 
 <textarea
-    id="formKesalahan"
-    placeholder="Apa kesalahan yang sering terjadi?"
+id="fKesalahan"
+placeholder="Tuliskan kesalahan umum..."
 ></textarea>
 
 </div>
 
 
-<div class="form-group full">
+<div
+class="form-group full">
 
 <label>
-    Kesimpulan
+Kesimpulan
 </label>
 
 <textarea
-    id="formKesimpulan"
-    placeholder="Tuliskan kesimpulan materi..."
+id="fKesimpulan"
+placeholder="Tuliskan kesimpulan..."
 ></textarea>
 
 </div>
@@ -2742,19 +2619,19 @@ body.dark .detail-category{
 <div class="modal-footer">
 
 <button
-    type="button"
-    class="cancel-button"
-    onclick="closeAddMaterialModal()"
+type="button"
+class="cancel"
+onclick="closeAddModal()"
 >
-    Batal
+Batal
 </button>
 
 <button
-    type="submit"
-    class="save-button"
-    id="saveMaterialButton"
+type="submit"
+class="save"
+id="saveButton"
 >
-    💾 Simpan Materi
+💾 Simpan Materi
 </button>
 
 </div>
@@ -2762,51 +2639,35 @@ body.dark .detail-category{
 
 </form>
 
-</div>
 
 </div>
 
-
-<!-- TOAST -->
-
-<div
-    class="toast-container"
-    id="toastContainer"
-></div>
+</div>
 
 
 <script>
 
 /* =====================================================
-   API URL
+   API
 ===================================================== */
 
-/*
-   MASUKKAN URL WEB APP APPS SCRIPT KAMU
-   YANG SEKARANG SUDAH BERHASIL MENAMPILKAN JSON.
-*/
-
 const API_URL =
-    "https://script.google.com/macros/s/AKfycbzdRtqmzwbnp1bKqRrpgbxq6zDz9KXyIy6PTMBdwV4M9s2pbFbQvFm9s4SRFcpmEfHC/exec";
+"https://script.google.com/macros/s/AKfycbzdRtqmzwbnp1bKqRrpgbxq6zDz9KXyIy6PTMBdwV4M9s2pbFbQvFm9s4SRFcpmEfHC/exec";
 
 
 /* =====================================================
-   GLOBAL STATE
+   DATA
 ===================================================== */
 
 let materials = [];
-
-let categories = [];
-
-let settings = [];
 
 let currentCategory = "ALL";
 
 let currentSearch = "";
 
-let currentMaterial = null;
+let openedMaterials = [];
 
-let learningHistory = [];
+let currentMaterialId = "";
 
 
 /* =====================================================
@@ -2814,24 +2675,23 @@ let learningHistory = [];
 ===================================================== */
 
 document.addEventListener(
-    "DOMContentLoaded",
-    function(){
+"DOMContentLoaded",
+function(){
 
-        loadTheme();
+    loadOpened();
 
-        loadLearningHistory();
+    loadTheme();
 
-        loadData();
+    loadMaterials();
 
-    }
-);
+});
 
 
 /* =====================================================
-   LOAD DATA
+   LOAD MATERIAL
 ===================================================== */
 
-async function loadData(){
+async function loadMaterials(){
 
     showLoading(true);
 
@@ -2851,18 +2711,20 @@ async function loadData(){
         }
 
 
+        const url =
+            API_URL +
+            "?action=materials&_=" +
+            Date.now();
+
+
         const response =
-            await fetch(
-                API_URL +
-                "?action=materials&_=" +
-                Date.now()
-            );
+            await fetch(url);
 
 
         if(!response.ok){
 
             throw new Error(
-                "Gagal mengambil database."
+                "Server tidak merespon."
             );
 
         }
@@ -2872,14 +2734,19 @@ async function loadData(){
             await response.json();
 
 
+        console.log(
+            "DATABASE:",
+            result
+        );
+
+
         if(
-            !result ||
             result.success !== true
         ){
 
             throw new Error(
-                result?.message ||
-                "API tidak mengembalikan data."
+                result.message ||
+                "Database tidak mengembalikan data."
             );
 
         }
@@ -2891,58 +2758,21 @@ async function loadData(){
                 : [];
 
 
-        try{
-
-            const categoryResponse =
-                await fetch(
-                    API_URL +
-                    "?action=categories&_=" +
-                    Date.now()
-                );
-
-
-            const categoryResult =
-                await categoryResponse.json();
-
-
-            categories =
-                Array.isArray(
-                    categoryResult?.data
-                )
-                    ? categoryResult.data
-                    : [];
-
-        }
-        catch(error){
-
-            categories =
-                buildCategoriesFromMaterials();
-
-        }
-
-
-        renderAll();
+        render();
 
     }
     catch(error){
 
-        console.error(
-            "LOAD ERROR:",
-            error
-        );
+        console.error(error);
 
+        showToast(
+            error.message,
+            "error"
+        );
 
         materials = [];
 
-
-        renderAll();
-
-
-        showToast(
-            error.message ||
-            "Gagal memuat data.",
-            "error"
-        );
+        render();
 
     }
     finally{
@@ -2955,52 +2785,18 @@ async function loadData(){
 
 
 /* =====================================================
-   FALLBACK CATEGORY
+   RENDER
 ===================================================== */
 
-function buildCategoriesFromMaterials(){
+function render(){
 
-    const unique =
-        [
-            ...new Set(
-                materials
-                    .map(
-                        item =>
-                            item["KATEGORI"]
-                    )
-                    .filter(Boolean)
-            )
-        ];
-
-
-    return unique.map(
-        (category,index) => ({
-
-            ID:index + 1,
-
-            KATEGORI:category,
-
-            STATUS:"Aktif"
-
-        })
-    );
-
-}
-
-
-/* =====================================================
-   RENDER ALL
-===================================================== */
-
-function renderAll(){
-
-    updateStats();
+    renderStats();
 
     renderCategories();
 
-    renderMaterialGrid();
+    renderMaterials();
 
-    populateCategorySelect();
+    renderCategorySelect();
 
 }
 
@@ -3009,57 +2805,52 @@ function renderAll(){
    STATS
 ===================================================== */
 
-function updateStats(){
+function renderStats(){
 
-    const total =
-        materials.length;
+    const categories =
+        new Set(
+            materials
+            .map(
+                x =>
+                    x["KATEGORI"]
+            )
+            .filter(Boolean)
+        );
 
 
     const active =
         materials.filter(
-            item =>
+            x =>
                 String(
-                    item["STATUS"] || ""
-                ).toLowerCase()
+                    x["STATUS"] || ""
+                )
+                .toLowerCase()
                 === "aktif"
         ).length;
-
-
-    const categoryCount =
-        [
-            ...new Set(
-                materials
-                    .map(
-                        item =>
-                            item["KATEGORI"]
-                    )
-                    .filter(Boolean)
-            )
-        ].length;
 
 
     document.getElementById(
         "totalMaterials"
     ).textContent =
-        total;
-
-
-    document.getElementById(
-        "activeMaterials"
-    ).textContent =
-        active;
+        materials.length;
 
 
     document.getElementById(
         "totalCategories"
     ).textContent =
-        categoryCount;
+        categories.size;
 
 
     document.getElementById(
-        "learningCount"
+        "totalActive"
     ).textContent =
-        learningHistory.length;
+        active;
+
+
+    document.getElementById(
+        "totalOpened"
+    ).textContent =
+        openedMaterials.length;
 
 }
 
@@ -3070,17 +2861,17 @@ function updateStats(){
 
 function renderCategories(){
 
-    const menu =
+    const container =
         document.getElementById(
-            "categoryMenu"
+            "categories"
         );
 
 
-    menu.innerHTML = "";
+    container.innerHTML = "";
 
 
-    createCategoryButton(
-        menu,
+    addCategory(
+        container,
         "ALL",
         "🏠",
         "Semua Materi",
@@ -3092,11 +2883,11 @@ function renderCategories(){
         [
             ...new Set(
                 materials
-                    .map(
-                        item =>
-                            item["KATEGORI"]
-                    )
-                    .filter(Boolean)
+                .map(
+                    x =>
+                        x["KATEGORI"]
+                )
+                .filter(Boolean)
             )
         ]
         .sort();
@@ -3107,16 +2898,16 @@ function renderCategories(){
 
             const count =
                 materials.filter(
-                    item =>
-                        item["KATEGORI"]
+                    x =>
+                        x["KATEGORI"]
                         === category
                 ).length;
 
 
-            createCategoryButton(
-                menu,
+            addCategory(
+                container,
                 category,
-                getCategoryIcon(category),
+                iconFor(category),
                 category,
                 count
             );
@@ -3127,9 +2918,9 @@ function renderCategories(){
 }
 
 
-function createCategoryButton(
-    menu,
-    category,
+function addCategory(
+    container,
+    value,
     icon,
     name,
     count
@@ -3142,9 +2933,9 @@ function createCategoryButton(
 
 
     button.className =
-        "category-button" +
+        "category" +
         (
-            currentCategory === category
+            currentCategory === value
                 ? " active"
                 : ""
         );
@@ -3161,7 +2952,7 @@ function createCategoryButton(
         </span>
 
         <span>
-            ${escapeHtml(name)}
+            ${escapeHTML(name)}
         </span>
 
         <span class="category-count">
@@ -3171,25 +2962,1053 @@ function createCategoryButton(
     `;
 
 
-    button.addEventListener(
-        "click",
+    button.onclick =
         function(){
 
             currentCategory =
-                category;
+                value;
 
             renderCategories();
 
-            renderMaterialGrid();
+            renderMaterials();
 
-            closeSidebar();
+        };
+
+
+    container.appendChild(
+        button
+    );
+
+}
+
+
+/* =====================================================
+   MATERIAL LIST
+===================================================== */
+
+function renderMaterials(){
+
+    const grid =
+        document.getElementById(
+            "materialGrid"
+        );
+
+
+    const list =
+        materials.filter(
+            material => {
+
+                const category =
+                    String(
+                        material["KATEGORI"] || ""
+                    );
+
+
+                if(
+                    currentCategory !== "ALL" &&
+                    category !== currentCategory
+                ){
+
+                    return false;
+
+                }
+
+
+                if(!currentSearch){
+
+                    return true;
+
+                }
+
+
+                const text = [
+
+                    material["ID"],
+
+                    material["JUDUL"],
+
+                    material["KATEGORI"],
+
+                    material["RINGKASAN"],
+
+                    material["PENGERTIAN"],
+
+                    material["MATERI"],
+
+                    material["CONTOH"],
+
+                    material["ANALISA"],
+
+                    material["DAMPAK"],
+
+                    material["KESALAHAN UMUM"],
+
+                    material["KESIMPULAN"]
+
+                ]
+                .join(" ")
+                .toLowerCase();
+
+
+                return text.includes(
+                    currentSearch
+                );
+
+            }
+        );
+
+
+    grid.innerHTML = "";
+
+
+    if(!list.length){
+
+        grid.innerHTML = `
+
+            <div class="empty">
+
+                <div
+                    style="
+                    font-size:45px;
+                    margin-bottom:10px;
+                    "
+                >
+                    🔎
+                </div>
+
+                <h3>
+                    Materi tidak ditemukan
+                </h3>
+
+                <p>
+                    Coba gunakan kata pencarian lain.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    list.forEach(
+        material => {
+
+            const id =
+                String(
+                    material["ID"] || ""
+                )
+                .trim();
+
+
+            const title =
+                material["JUDUL"] ||
+                "Tanpa Judul";
+
+
+            const category =
+                material["KATEGORI"] ||
+                "General";
+
+
+            const summary =
+                material["RINGKASAN"] ||
+                material["PENGERTIAN"] ||
+                "Belum ada ringkasan.";
+
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "material-card";
+
+
+            card.innerHTML = `
+
+                <div class="card-top">
+
+                    <div class="card-icon">
+
+                        ${iconFor(category)}
+
+                    </div>
+
+                    <div class="card-id">
+
+                        ${escapeHTML(id)}
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-category">
+
+                    ${escapeHTML(category)}
+
+                </div>
+
+
+                <h3>
+
+                    ${escapeHTML(title)}
+
+                </h3>
+
+
+                <div class="card-summary">
+
+                    ${escapeHTML(
+                        clean(summary)
+                    )}
+
+                </div>
+
+
+                <div class="card-footer">
+
+                    <span class="opened">
+
+                        ${
+                            openedMaterials.includes(id)
+                            ? "✓ Sudah dibuka"
+                            : "Belum dibuka"
+                        }
+
+                    </span>
+
+
+                    <button
+                        type="button"
+                        class="card-open"
+                        data-material-id="${escapeHTML(id)}"
+                        onclick="openMaterialFromButton(this)"
+                    >
+
+                        Buka →
+
+                    </button>
+
+                </div>
+
+            `;
+
+
+            grid.appendChild(
+                card
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   OPEN MATERIAL FROM BUTTON
+===================================================== */
+
+function openMaterialFromButton(button){
+
+    const id =
+        button.getAttribute(
+            "data-material-id"
+        );
+
+
+    if(!id){
+
+        showToast(
+            "ID materi tidak ditemukan.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    openMaterial(id);
+
+}
+
+
+/* =====================================================
+   OPEN MATERIAL
+===================================================== */
+
+function openMaterial(id){
+
+    const target =
+        String(id)
+        .trim();
+
+
+    const material =
+        materials.find(
+            item =>
+                String(
+                    item["ID"] || ""
+                )
+                .trim()
+                === target
+        );
+
+
+    if(!material){
+
+        showToast(
+            "Data materi tidak ditemukan.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    /*
+     * SIMPAN MATERI YANG SEDANG DIBUKA
+     */
+
+    currentMaterialId =
+        target;
+
+
+    /*
+     * HISTORY
+     */
+
+    if(
+        !openedMaterials.includes(
+            target
+        )
+    ){
+
+        openedMaterials.push(
+            target
+        );
+
+        saveOpened();
+
+    }
+
+
+    /*
+     * BANGUN DETAIL
+     */
+
+    buildDetail(
+        material
+    );
+
+
+    /*
+     * TAMPILKAN DETAIL
+     */
+
+    document.getElementById(
+        "dashboard"
+    )
+    .classList
+    .add("hidden");
+
+
+    document.getElementById(
+        "detail"
+    )
+    .classList
+    .add("show");
+
+
+    document.getElementById(
+        "topTitle"
+    ).textContent =
+        material["JUDUL"] ||
+        "Detail Materi";
+
+
+    document.getElementById(
+        "topSubtitle"
+    ).textContent =
+        "Materi pembelajaran";
+
+
+    /*
+     * SCROLL KE PALING ATAS
+     * SETIAP KALI GANTI MATERI
+     */
+
+    window.scrollTo(
+        {
+            top:0,
+            behavior:"smooth"
+        }
+    );
+
+
+    renderStats();
+
+}
+
+
+/* =====================================================
+   BUILD DETAIL
+===================================================== */
+
+function buildDetail(material){
+
+    const category =
+        material["KATEGORI"] ||
+        "General";
+
+
+    /*
+     * HEADER
+     */
+
+    document.getElementById(
+        "detailHeader"
+    ).innerHTML = `
+
+        <div class="detail-category">
+
+            ${iconFor(category)}
+
+            &nbsp;
+
+            ${escapeHTML(category)}
+
+        </div>
+
+
+        <h1>
+
+            ${escapeHTML(
+                material["JUDUL"] ||
+                "Tanpa Judul"
+            )}
+
+        </h1>
+
+
+        <div class="detail-summary">
+
+            ${formatText(
+                material["RINGKASAN"] ||
+                material["PENGERTIAN"] ||
+                ""
+            )}
+
+        </div>
+
+    `;
+
+
+    /*
+     * SECTIONS
+     */
+
+    const sections = [
+
+        [
+            "📖",
+            "Pengertian",
+            "PENGERTIAN"
+        ],
+
+        [
+            "📚",
+            "Materi Lengkap",
+            "MATERI"
+        ],
+
+        [
+            "🧮",
+            "Contoh",
+            "CONTOH"
+        ],
+
+        [
+            "🔎",
+            "Analisa",
+            "ANALISA"
+        ],
+
+        [
+            "📈",
+            "Dampak",
+            "DAMPAK"
+        ],
+
+        [
+            "⚠️",
+            "Kesalahan Umum",
+            "KESALAHAN UMUM"
+        ],
+
+        [
+            "✅",
+            "Kesimpulan",
+            "KESIMPULAN"
+        ]
+
+    ];
+
+
+    const container =
+        document.getElementById(
+            "detailSections"
+        );
+
+
+    container.innerHTML = "";
+
+
+    sections.forEach(
+        section => {
+
+            const icon =
+                section[0];
+
+            const title =
+                section[1];
+
+            const key =
+                section[2];
+
+
+            const value =
+                material[key];
+
+
+            if(
+                value === undefined ||
+                value === null ||
+                String(value).trim() === ""
+            ){
+
+                return;
+
+            }
+
+
+            const box =
+                document.createElement(
+                    "div"
+                );
+
+
+            box.className =
+                "detail-box";
+
+
+            box.innerHTML = `
+
+                <div class="detail-title">
+
+                    <div class="detail-title-icon">
+
+                        ${icon}
+
+                    </div>
+
+                    ${title}
+
+                </div>
+
+
+                <div class="detail-text">
+
+                    ${formatText(value)}
+
+                </div>
+
+            `;
+
+
+            container.appendChild(
+                box
+            );
 
         }
     );
 
 
-    menu.appendChild(
-        button
+    /*
+     * SIDEBAR INFORMASI
+     */
+
+    document.getElementById(
+        "detailSide"
+    ).innerHTML = `
+
+        <div class="info">
+
+            <h3>
+                📌 Informasi Materi
+            </h3>
+
+
+            <div class="info-row">
+
+                <span>ID</span>
+
+                <span>
+                    ${escapeHTML(
+                        material["ID"] || "-"
+                    )}
+                </span>
+
+            </div>
+
+
+            <div class="info-row">
+
+                <span>Kategori</span>
+
+                <span>
+                    ${escapeHTML(
+                        material["KATEGORI"] || "-"
+                    )}
+                </span>
+
+            </div>
+
+
+            <div class="info-row">
+
+                <span>Status</span>
+
+                <span>
+                    ${escapeHTML(
+                        material["STATUS"] || "-"
+                    )}
+                </span>
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    /*
+     * UPDATE NAVIGASI BELAJAR
+     */
+
+    buildLearningNavigation();
+
+}
+
+
+/* =====================================================
+   BUILD LEARNING NAVIGATION
+===================================================== */
+
+function buildLearningNavigation(){
+
+    const select =
+        document.getElementById(
+            "nextMaterialSelect"
+        );
+
+
+    const previousButton =
+        document.getElementById(
+            "previousMaterialButton"
+        );
+
+
+    const nextButton =
+        document.getElementById(
+            "nextMaterialButton"
+        );
+
+
+    const previousText =
+        document.getElementById(
+            "previousMaterialText"
+        );
+
+
+    const nextText =
+        document.getElementById(
+            "nextMaterialText"
+        );
+
+
+    /*
+     * RESET DROPDOWN
+     */
+
+    select.innerHTML = `
+
+        <option value="">
+            📚 Pilih materi lain...
+        </option>
+
+    `;
+
+
+    /*
+     * GROUP BY CATEGORY
+     */
+
+    const categories =
+        [
+            ...new Set(
+                materials
+                .map(
+                    item =>
+                        item["KATEGORI"]
+                )
+                .filter(Boolean)
+            )
+        ]
+        .sort();
+
+
+    categories.forEach(
+        category => {
+
+            const group =
+                document.createElement(
+                    "optgroup"
+                );
+
+
+            group.label =
+                "📁 " +
+                category;
+
+
+            materials
+            .filter(
+                item =>
+                    item["KATEGORI"]
+                    === category
+            )
+            .forEach(
+                item => {
+
+                    const id =
+                        String(
+                            item["ID"] || ""
+                        )
+                        .trim();
+
+
+                    /*
+                     * Jangan tampilkan
+                     * materi yang sedang dibuka
+                     * sebagai pilihan dropdown.
+                     */
+
+                    if(
+                        id === currentMaterialId
+                    ){
+
+                        return;
+
+                    }
+
+
+                    const option =
+                        document.createElement(
+                            "option"
+                        );
+
+
+                    option.value =
+                        id;
+
+
+                    option.textContent =
+                        item["JUDUL"] ||
+                        "Tanpa Judul";
+
+
+                    group.appendChild(
+                        option
+                    );
+
+                }
+            );
+
+
+            select.appendChild(
+                group
+            );
+
+        }
+    );
+
+
+    /*
+     * CARI POSISI MATERI SAAT INI
+     */
+
+    const currentIndex =
+        materials.findIndex(
+            item =>
+                String(
+                    item["ID"] || ""
+                )
+                .trim()
+                ===
+                String(
+                    currentMaterialId
+                )
+                .trim()
+        );
+
+
+    /*
+     * MATERI SEBELUMNYA
+     */
+
+    if(
+        currentIndex > 0
+    ){
+
+        const previous =
+            materials[
+                currentIndex - 1
+            ];
+
+
+        previousButton.disabled =
+            false;
+
+
+        previousButton.style.opacity =
+            "1";
+
+
+        previousText.textContent =
+            previous["JUDUL"] ||
+            "Materi sebelumnya";
+
+    }
+    else{
+
+        previousButton.disabled =
+            true;
+
+
+        previousButton.style.opacity =
+            ".5";
+
+
+        previousText.textContent =
+            "Tidak ada materi sebelumnya";
+
+    }
+
+
+    /*
+     * MATERI BERIKUTNYA
+     */
+
+    if(
+        currentIndex >= 0 &&
+        currentIndex <
+            materials.length - 1
+    ){
+
+        const next =
+            materials[
+                currentIndex + 1
+            ];
+
+
+        nextButton.disabled =
+            false;
+
+
+        nextButton.style.opacity =
+            "1";
+
+
+        nextText.textContent =
+            next["JUDUL"] ||
+            "Materi berikutnya";
+
+    }
+    else{
+
+        nextButton.disabled =
+            true;
+
+
+        nextButton.style.opacity =
+            ".5";
+
+
+        nextText.textContent =
+            "Tidak ada materi berikutnya";
+
+    }
+
+}
+
+
+/* =====================================================
+   CHANGE MATERIAL FROM DROPDOWN
+===================================================== */
+
+function changeMaterialFromDropdown(id){
+
+    if(!id){
+
+        return;
+
+    }
+
+
+    openMaterial(
+        id
+    );
+
+}
+
+
+/* =====================================================
+   PREVIOUS MATERIAL
+===================================================== */
+
+function openPreviousMaterial(){
+
+    const index =
+        materials.findIndex(
+            item =>
+                String(
+                    item["ID"] || ""
+                )
+                .trim()
+                ===
+                String(
+                    currentMaterialId
+                )
+                .trim()
+        );
+
+
+    if(
+        index <= 0
+    ){
+
+        return;
+
+    }
+
+
+    const previous =
+        materials[
+            index - 1
+        ];
+
+
+    openMaterial(
+        previous["ID"]
+    );
+
+}
+
+
+/* =====================================================
+   NEXT MATERIAL
+===================================================== */
+
+function openNextMaterial(){
+
+    const index =
+        materials.findIndex(
+            item =>
+                String(
+                    item["ID"] || ""
+                )
+                .trim()
+                ===
+                String(
+                    currentMaterialId
+                )
+                .trim()
+        );
+
+
+    if(
+        index < 0 ||
+        index >=
+            materials.length - 1
+    ){
+
+        return;
+
+    }
+
+
+    const next =
+        materials[
+            index + 1
+        ];
+
+
+    openMaterial(
+        next["ID"]
+    );
+
+}
+
+
+/* =====================================================
+   BACK DASHBOARD
+===================================================== */
+
+function backDashboard(){
+
+    document.getElementById(
+        "detail"
+    )
+    .classList
+    .remove("show");
+
+
+    document.getElementById(
+        "dashboard"
+    )
+    .classList
+    .remove("hidden");
+
+
+    document.getElementById(
+        "topTitle"
+    ).textContent =
+        "Dashboard";
+
+
+    document.getElementById(
+        "topSubtitle"
+    ).textContent =
+        "Pusat belajar operasional restoran";
+
+
+    currentMaterialId =
+        "";
+
+
+    window.scrollTo(
+        {
+            top:0,
+            behavior:"smooth"
+        }
     );
 
 }
@@ -3199,12 +4018,12 @@ function createCategoryButton(
    SEARCH
 ===================================================== */
 
-function handleSearch(value){
+function searchMaterial(value){
 
     currentSearch =
         String(value || "")
-            .toLowerCase()
-            .trim();
+        .toLowerCase()
+        .trim();
 
 
     const main =
@@ -3239,715 +4058,7 @@ function handleSearch(value){
     }
 
 
-    renderMaterialGrid();
-
-}
-
-
-/* =====================================================
-   FILTER
-===================================================== */
-
-function getFilteredMaterials(){
-
-    return materials.filter(
-        item => {
-
-            const category =
-                String(
-                    item["KATEGORI"] || ""
-                );
-
-
-            if(
-                currentCategory !== "ALL" &&
-                category !== currentCategory
-            ){
-
-                return false;
-
-            }
-
-
-            if(!currentSearch){
-
-                return true;
-
-            }
-
-
-            const searchable = [
-
-                item["ID"],
-
-                item["JUDUL"],
-
-                item["KATEGORI"],
-
-                item["RINGKASAN"],
-
-                item["PENGERTIAN"],
-
-                item["MATERI"],
-
-                item["CONTOH"],
-
-                item["ANALISA"],
-
-                item["DAMPAK"],
-
-                item["KESALAHAN UMUM"],
-
-                item["KESIMPULAN"]
-
-            ]
-            .join(" ")
-            .toLowerCase();
-
-
-            return searchable.includes(
-                currentSearch
-            );
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   RENDER MATERIAL
-===================================================== */
-
-function renderMaterialGrid(){
-
-    const grid =
-        document.getElementById(
-            "materialGrid"
-        );
-
-
-    const list =
-        getFilteredMaterials();
-
-
-    grid.innerHTML = "";
-
-
-    if(!list.length){
-
-        grid.innerHTML = `
-
-            <div
-                class="empty-state"
-                style="grid-column:1/-1"
-            >
-
-                <div style="font-size:45px">
-                    🔎
-                </div>
-
-                <h3>
-                    Materi tidak ditemukan
-                </h3>
-
-                <p>
-                    Coba gunakan kata pencarian
-                    yang berbeda.
-                </p>
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    list.forEach(
-        item => {
-
-            const card =
-                document.createElement(
-                    "article"
-                );
-
-
-            card.className =
-                "material-card";
-
-
-            /*
-             * CARD SENDIRI JUGA BISA DIKLIK
-             */
-
-            card.addEventListener(
-                "click",
-                function(){
-
-                    openMaterial(
-                        item["ID"]
-                    );
-
-                }
-            );
-
-
-            const id =
-                String(
-                    item["ID"] || ""
-                );
-
-
-            const title =
-                String(
-                    item["JUDUL"] ||
-                    "Tanpa Judul"
-                );
-
-
-            const category =
-                String(
-                    item["KATEGORI"] ||
-                    "General"
-                );
-
-
-            const summary =
-                item["RINGKASAN"] ||
-                item["PENGERTIAN"] ||
-                "Belum ada ringkasan.";
-
-
-            const alreadyOpened =
-                learningHistory.includes(
-                    id
-                );
-
-
-            card.innerHTML = `
-
-                <div class="material-top">
-
-                    <div class="material-icon">
-
-                        ${getCategoryIcon(category)}
-
-                    </div>
-
-                    <div class="material-id">
-
-                        ${escapeHtml(id)}
-
-                    </div>
-
-                </div>
-
-
-                <div class="material-category">
-
-                    ${escapeHtml(category)}
-
-                </div>
-
-
-                <h4>
-
-                    ${escapeHtml(title)}
-
-                </h4>
-
-
-                <p>
-
-                    ${escapeHtml(
-                        cleanText(summary)
-                    )}
-
-                </p>
-
-
-                <div class="material-footer">
-
-                    <span class="material-status">
-
-                        ${
-                            alreadyOpened
-                                ? "✓ Sudah dibuka"
-                                : "Belum dibuka"
-                        }
-
-                    </span>
-
-
-                    <!-- =================================
-                         TOMBOL BUKA MATERI
-                         FIX UTAMA
-                    ================================== -->
-
-                    <button
-                        type="button"
-                        class="open-material-button"
-                    >
-                        BUKA MATERI →
-                    </button>
-
-                </div>
-
-            `;
-
-
-            /*
-             * AMBIL BUTTON SETELAH HTML DIBUAT
-             */
-
-            const openButton =
-                card.querySelector(
-                    ".open-material-button"
-                );
-
-
-            /*
-             * EVENT KHUSUS BUTTON
-             *
-             * stopPropagation mencegah event
-             * berjalan dua kali.
-             */
-
-            openButton.addEventListener(
-                "click",
-                function(event){
-
-                    event.preventDefault();
-
-                    event.stopPropagation();
-
-                    openMaterial(
-                        item["ID"]
-                    );
-
-                }
-            );
-
-
-            grid.appendChild(
-                card
-            );
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   OPEN MATERIAL
-===================================================== */
-
-function openMaterial(id){
-
-    console.log(
-        "OPEN MATERIAL:",
-        id
-    );
-
-
-    const targetId =
-        String(id || "")
-            .trim();
-
-
-    const item =
-        materials.find(
-            material =>
-                String(
-                    material["ID"] || ""
-                )
-                .trim()
-                === targetId
-        );
-
-
-    if(!item){
-
-        showToast(
-            "Materi tidak ditemukan.",
-            "error"
-        );
-
-        console.error(
-            "ID tidak ditemukan:",
-            targetId,
-            materials
-        );
-
-        return;
-
-    }
-
-
-    currentMaterial =
-        item;
-
-
-    /*
-     * SIMPAN HISTORY
-     */
-
-    if(
-        !learningHistory.includes(
-            targetId
-        )
-    ){
-
-        learningHistory.push(
-            targetId
-        );
-
-        saveLearningHistory();
-
-    }
-
-
-    updateStats();
-
-
-    const category =
-        item["KATEGORI"] ||
-        "General";
-
-
-    /*
-     * DETAIL HERO
-     */
-
-    document.getElementById(
-        "detailHero"
-    ).innerHTML = `
-
-        <div class="detail-category">
-
-            ${getCategoryIcon(category)}
-
-            &nbsp;
-
-            ${escapeHtml(category)}
-
-        </div>
-
-
-        <h2>
-
-            ${escapeHtml(
-                item["JUDUL"] ||
-                "Tanpa Judul"
-            )}
-
-        </h2>
-
-
-        <p class="detail-summary">
-
-            ${escapeHtml(
-                item["RINGKASAN"] ||
-                ""
-            )}
-
-        </p>
-
-    `;
-
-
-    /*
-     * DETAIL CONTENT
-     */
-
-    const sections = [
-
-        {
-            icon:"📖",
-            title:"Pengertian",
-            key:"PENGERTIAN"
-        },
-
-        {
-            icon:"📚",
-            title:"Materi Lengkap",
-            key:"MATERI"
-        },
-
-        {
-            icon:"🧮",
-            title:"Contoh",
-            key:"CONTOH"
-        },
-
-        {
-            icon:"🔎",
-            title:"Analisa",
-            key:"ANALISA"
-        },
-
-        {
-            icon:"📈",
-            title:"Dampak",
-            key:"DAMPAK"
-        },
-
-        {
-            icon:"⚠️",
-            title:"Kesalahan Umum",
-            key:"KESALAHAN UMUM"
-        },
-
-        {
-            icon:"✅",
-            title:"Kesimpulan",
-            key:"KESIMPULAN"
-        }
-
-    ];
-
-
-    const content =
-        document.getElementById(
-            "detailContent"
-        );
-
-
-    content.innerHTML = "";
-
-
-    sections.forEach(
-        section => {
-
-            const value =
-                item[
-                    section.key
-                ];
-
-
-            if(
-                value === undefined ||
-                value === null ||
-                String(value).trim() === ""
-            ){
-
-                return;
-
-            }
-
-
-            const box =
-                document.createElement(
-                    "section"
-                );
-
-
-            box.className =
-                "detail-section";
-
-
-            box.innerHTML = `
-
-                <div class="detail-section-title">
-
-                    <span>
-                        ${section.icon}
-                    </span>
-
-                    ${section.title}
-
-                </div>
-
-
-                <div class="detail-text">
-
-                    ${formatText(value)}
-
-                </div>
-
-            `;
-
-
-            content.appendChild(
-                box
-            );
-
-        }
-    );
-
-
-    /*
-     * INFO SIDEBAR
-     */
-
-    document.getElementById(
-        "detailSidebar"
-    ).innerHTML = `
-
-        <div class="info-card">
-
-            <h4>
-                📌 Informasi Materi
-            </h4>
-
-
-            <div class="info-item">
-
-                <span>ID</span>
-
-                <span>
-                    ${escapeHtml(
-                        item["ID"] || "-"
-                    )}
-                </span>
-
-            </div>
-
-
-            <div class="info-item">
-
-                <span>Kategori</span>
-
-                <span>
-                    ${escapeHtml(
-                        item["KATEGORI"] || "-"
-                    )}
-                </span>
-
-            </div>
-
-
-            <div class="info-item">
-
-                <span>Status</span>
-
-                <span>
-                    ${escapeHtml(
-                        item["STATUS"] || "-"
-                    )}
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="info-card">
-
-            <h4>
-                🧭 Navigasi
-            </h4>
-
-
-            <button
-                type="button"
-                class="add-button"
-                style="
-                    width:100%;
-                    justify-content:center;
-                    margin-bottom:8px;
-                "
-                onclick="backToDashboard()"
-            >
-                ← Semua Materi
-            </button>
-
-
-            <button
-                type="button"
-                class="cancel-button"
-                style="width:100%"
-                onclick="openAddMaterialModal()"
-            >
-                ＋ Tambah Materi
-            </button>
-
-        </div>
-
-    `;
-
-
-    /*
-     * PINDAH HALAMAN
-     */
-
-    document.getElementById(
-        "dashboardPage"
-    )
-    .classList
-    .add("hidden");
-
-
-    document.getElementById(
-        "detailPage"
-    )
-    .classList
-    .add("active");
-
-
-    document.getElementById(
-        "pageTitle"
-    ).textContent =
-        item["JUDUL"] ||
-        "Detail Materi";
-
-
-    document.getElementById(
-        "pageSubtitle"
-    ).textContent =
-        "Materi pembelajaran";
-
-
-    closeSidebar();
-
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-}
-
-
-/* =====================================================
-   BACK
-===================================================== */
-
-function backToDashboard(){
-
-    document.getElementById(
-        "detailPage"
-    )
-    .classList
-    .remove("active");
-
-
-    document.getElementById(
-        "dashboardPage"
-    )
-    .classList
-    .remove("hidden");
-
-
-    document.getElementById(
-        "pageTitle"
-    ).textContent =
-        "Dashboard";
-
-
-    document.getElementById(
-        "pageSubtitle"
-    ).textContent =
-        "Pusat belajar operasional restoran";
-
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+    renderMaterials();
 
 }
 
@@ -3956,16 +4067,12 @@ function backToDashboard(){
    CATEGORY SELECT
 ===================================================== */
 
-function populateCategorySelect(){
+function renderCategorySelect(){
 
     const select =
         document.getElementById(
-            "formKategori"
+            "fKategori"
         );
-
-
-    const oldValue =
-        select.value;
 
 
     select.innerHTML = `
@@ -3981,11 +4088,11 @@ function populateCategorySelect(){
         [
             ...new Set(
                 materials
-                    .map(
-                        item =>
-                            item["KATEGORI"]
-                    )
-                    .filter(Boolean)
+                .map(
+                    x =>
+                        x["KATEGORI"]
+                )
+                .filter(Boolean)
             )
         ]
         .sort();
@@ -4015,14 +4122,6 @@ function populateCategorySelect(){
         }
     );
 
-
-    if(oldValue){
-
-        select.value =
-            oldValue;
-
-    }
-
 }
 
 
@@ -4030,13 +4129,13 @@ function populateCategorySelect(){
    ADD MODAL
 ===================================================== */
 
-function openAddMaterialModal(){
+function openAddModal(){
 
-    populateCategorySelect();
+    renderCategorySelect();
 
 
     document.getElementById(
-        "addMaterialModal"
+        "addModal"
     )
     .classList
     .add("show");
@@ -4048,10 +4147,10 @@ function openAddMaterialModal(){
 }
 
 
-function closeAddMaterialModal(){
+function closeAddModal(){
 
     document.getElementById(
-        "addMaterialModal"
+        "addModal"
     )
     .classList
     .remove("show");
@@ -4064,17 +4163,17 @@ function closeAddMaterialModal(){
 
 
 /* =====================================================
-   SUBMIT
+   SAVE MATERIAL
 ===================================================== */
 
-async function submitMaterial(event){
+async function saveMaterial(event){
 
     event.preventDefault();
 
 
     const button =
         document.getElementById(
-            "saveMaterialButton"
+            "saveButton"
         );
 
 
@@ -4086,81 +4185,97 @@ async function submitMaterial(event){
         "⏳ Menyimpan...";
 
 
-    const data = {
+    const body =
+        new URLSearchParams();
 
-        action:"addMaterial",
 
-        JUDUL:
-            document.getElementById(
-                "formJudul"
-            ).value.trim(),
+    body.append(
+        "action",
+        "addMaterial"
+    );
 
-        KATEGORI:
-            document.getElementById(
-                "formKategori"
-            ).value,
 
-        RINGKASAN:
-            document.getElementById(
-                "formRingkasan"
-            ).value.trim(),
+    body.append(
+        "JUDUL",
+        document.getElementById(
+            "fJudul"
+        ).value.trim()
+    );
 
-        PENGERTIAN:
-            document.getElementById(
-                "formPengertian"
-            ).value.trim(),
 
-        MATERI:
-            document.getElementById(
-                "formMateri"
-            ).value.trim(),
+    body.append(
+        "KATEGORI",
+        document.getElementById(
+            "fKategori"
+        ).value
+    );
 
-        CONTOH:
-            document.getElementById(
-                "formContoh"
-            ).value.trim(),
 
-        ANALISA:
-            document.getElementById(
-                "formAnalisa"
-            ).value.trim(),
+    body.append(
+        "RINGKASAN",
+        document.getElementById(
+            "fRingkasan"
+        ).value.trim()
+    );
 
-        DAMPAK:
-            document.getElementById(
-                "formDampak"
-            ).value.trim(),
 
-        KESALAHAN:
-            document.getElementById(
-                "formKesalahan"
-            ).value.trim(),
+    body.append(
+        "PENGERTIAN",
+        document.getElementById(
+            "fPengertian"
+        ).value.trim()
+    );
 
-        KESIMPULAN:
-            document.getElementById(
-                "formKesimpulan"
-            ).value.trim()
 
-    };
+    body.append(
+        "MATERI",
+        document.getElementById(
+            "fMateri"
+        ).value.trim()
+    );
+
+
+    body.append(
+        "CONTOH",
+        document.getElementById(
+            "fContoh"
+        ).value.trim()
+    );
+
+
+    body.append(
+        "ANALISA",
+        document.getElementById(
+            "fAnalisa"
+        ).value.trim()
+    );
+
+
+    body.append(
+        "DAMPAK",
+        document.getElementById(
+            "fDampak"
+        ).value.trim()
+    );
+
+
+    body.append(
+        "KESALAHAN",
+        document.getElementById(
+            "fKesalahan"
+        ).value.trim()
+    );
+
+
+    body.append(
+        "KESIMPULAN",
+        document.getElementById(
+            "fKesimpulan"
+        ).value.trim()
+    );
 
 
     try{
-
-        const body =
-            new URLSearchParams();
-
-
-        Object.keys(data)
-            .forEach(
-                key => {
-
-                    body.append(
-                        key,
-                        data[key]
-                    );
-
-                }
-            );
-
 
         await fetch(
             API_URL,
@@ -4182,7 +4297,7 @@ async function submitMaterial(event){
         );
 
 
-        closeAddMaterialModal();
+        closeAddModal();
 
 
         document.getElementById(
@@ -4197,7 +4312,7 @@ async function submitMaterial(event){
 
 
         setTimeout(
-            loadData,
+            loadMaterials,
             1500
         );
 
@@ -4207,8 +4322,7 @@ async function submitMaterial(event){
         console.error(error);
 
         showToast(
-            error.message ||
-            "Gagal menyimpan materi.",
+            error.message,
             "error"
         );
 
@@ -4233,18 +4347,10 @@ async function submitMaterial(event){
 function formatText(value){
 
     let text =
-        escapeHtml(
-            String(value || "")
+        String(
+            value || ""
         );
 
-
-    /*
-     * Apps Script JSON kadang membawa
-     * karakter literal \n.
-     *
-     * Kita ubah agar tampil sebagai
-     * baris baru.
-     */
 
     text =
         text.replace(
@@ -4253,9 +4359,11 @@ function formatText(value){
         );
 
 
-    /*
-     * Bold
-     */
+    text =
+        escapeHTML(
+            text
+        );
+
 
     text =
         text.replace(
@@ -4273,7 +4381,7 @@ function formatText(value){
    CLEAN
 ===================================================== */
 
-function cleanText(value){
+function clean(value){
 
     return String(
         value || ""
@@ -4292,10 +4400,10 @@ function cleanText(value){
 
 
 /* =====================================================
-   ESCAPE
+   ESCAPE HTML
 ===================================================== */
 
-function escapeHtml(value){
+function escapeHTML(value){
 
     return String(
         value ?? ""
@@ -4325,10 +4433,10 @@ function escapeHtml(value){
 
 
 /* =====================================================
-   CATEGORY ICON
+   ICON
 ===================================================== */
 
-function getCategoryIcon(category){
+function iconFor(category){
 
     const icons = {
 
@@ -4342,11 +4450,11 @@ function getCategoryIcon(category){
 
         "Quality":"🛡️",
 
+        "Operational":"⚙️",
+
         "Management":"👔",
 
-        "People":"👥",
-
-        "Operational":"⚙️"
+        "People":"👥"
 
     };
 
@@ -4359,86 +4467,73 @@ function getCategoryIcon(category){
 
 
 /* =====================================================
-   HISTORY
+   OPENED MATERIAL
 ===================================================== */
 
-function loadLearningHistory(){
+function loadOpened(){
 
     try{
 
-        const stored =
+        const data =
             localStorage.getItem(
-                "mlc_learning_history"
+                "MY_LEARNING_OPENED"
             );
 
 
-        learningHistory =
-            stored
-                ? JSON.parse(stored)
+        openedMaterials =
+            data
+                ? JSON.parse(data)
                 : [];
 
 
         if(
             !Array.isArray(
-                learningHistory
+                openedMaterials
             )
         ){
 
-            learningHistory = [];
+            openedMaterials = [];
 
         }
 
     }
     catch(error){
 
-        learningHistory = [];
+        openedMaterials = [];
 
     }
 
 }
 
 
-function saveLearningHistory(){
+function saveOpened(){
 
-    try{
-
-        localStorage.setItem(
-            "mlc_learning_history",
-            JSON.stringify(
-                learningHistory
-            )
-        );
-
-    }
-    catch(error){
-
-        console.warn(error);
-
-    }
+    localStorage.setItem(
+        "MY_LEARNING_OPENED",
+        JSON.stringify(
+            openedMaterials
+        )
+    );
 
 }
 
 
 /* =====================================================
-   THEME
+   DARK MODE
 ===================================================== */
 
-function toggleTheme(){
+function toggleDark(){
 
     document.body
         .classList
         .toggle("dark");
 
 
-    const dark =
+    localStorage.setItem(
+        "MY_LEARNING_THEME",
         document.body
             .classList
-            .contains("dark");
-
-
-    localStorage.setItem(
-        "mlc_theme",
-        dark
+            .contains("dark")
             ? "dark"
             : "light"
     );
@@ -4448,14 +4543,11 @@ function toggleTheme(){
 
 function loadTheme(){
 
-    const theme =
-        localStorage.getItem(
-            "mlc_theme"
-        );
-
-
     if(
-        theme === "dark"
+        localStorage.getItem(
+            "MY_LEARNING_THEME"
+        )
+        === "dark"
     ){
 
         document.body
@@ -4473,19 +4565,9 @@ function loadTheme(){
 
 function focusSearch(){
 
-    const input =
-        document.getElementById(
-            "mainSearch"
-        );
-
-
-    input.focus();
-
-
-    input.scrollIntoView({
-        behavior:"smooth",
-        block:"center"
-    });
+    document.getElementById(
+        "mainSearch"
+    ).focus();
 
 }
 
@@ -4502,31 +4584,6 @@ function toggleSidebar(){
     .classList
     .toggle("open");
 
-
-    document.getElementById(
-        "sidebarOverlay"
-    )
-    .classList
-    .toggle("show");
-
-}
-
-
-function closeSidebar(){
-
-    document.getElementById(
-        "sidebar"
-    )
-    .classList
-    .remove("open");
-
-
-    document.getElementById(
-        "sidebarOverlay"
-    )
-    .classList
-    .remove("show");
-
 }
 
 
@@ -4536,24 +4593,24 @@ function closeSidebar(){
 
 function showLoading(show){
 
-    const loading =
+    const element =
         document.getElementById(
-            "loadingScreen"
+            "loading"
         );
 
 
     if(show){
 
-        loading
+        element
             .classList
-            .remove("hidden");
+            .remove("hide");
 
     }
     else{
 
-        loading
+        element
             .classList
-            .add("hidden");
+            .add("hide");
 
     }
 
@@ -4569,12 +4626,6 @@ function showToast(
     type="success"
 ){
 
-    const container =
-        document.getElementById(
-            "toastContainer"
-        );
-
-
     const toast =
         document.createElement(
             "div"
@@ -4582,32 +4633,20 @@ function showToast(
 
 
     toast.className =
-        "toast " +
-        type;
+        "toast";
 
 
-    toast.innerHTML = `
-
-        <div class="toast-title">
-
-            ${
-                type === "error"
-                    ? "Terjadi Masalah"
-                    : "Berhasil"
-            }
-
-        </div>
-
-        <div class="toast-message">
-
-            ${escapeHtml(message)}
-
-        </div>
-
-    `;
+    toast.style.borderLeft =
+        type === "error"
+            ? "4px solid #dc2626"
+            : "4px solid #16a34a";
 
 
-    container.appendChild(
+    toast.textContent =
+        message;
+
+
+    document.body.appendChild(
         toast
     );
 
@@ -4625,11 +4664,11 @@ function showToast(
 
 
 /* =====================================================
-   MODAL OUTSIDE
+   CLOSE MODAL OUTSIDE
 ===================================================== */
 
 document.getElementById(
-    "addMaterialModal"
+    "addModal"
 )
 .addEventListener(
     "click",
@@ -4639,7 +4678,7 @@ document.getElementById(
             event.target === this
         ){
 
-            closeAddMaterialModal();
+            closeAddModal();
 
         }
 
@@ -4659,9 +4698,7 @@ document.addEventListener(
             event.key === "Escape"
         ){
 
-            closeAddMaterialModal();
-
-            closeSidebar();
+            closeAddModal();
 
         }
 
